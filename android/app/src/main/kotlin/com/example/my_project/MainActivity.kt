@@ -1,4 +1,4 @@
-package com.mycompany.food
+package com.mycompany.fsgproject
 
 import io.flutter.embedding.android.FlutterActivity
 

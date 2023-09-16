@@ -1,4 +1,4 @@
-# food
+# FSG-project
 
 A new Flutter project.
 

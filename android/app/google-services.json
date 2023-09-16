@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "32920338432",
+    "project_id": "fsgapp-1bc75",
+    "storage_bucket": "fsgapp-1bc75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32920338432:android:eb8993fd552783b6acd8e5",
+        "android_client_info": {
+          "package_name": "com.mycompany.fsgproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRsdxvgL4-jJ9Db1IRbB_SazwRy67JEug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -54,6 +54,10 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
+  late Color primaryBtnText;
+  late Color lineColor;
+  late Color backgroundComponents;
+
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
   @Deprecated('Use displaySmall instead')
@@ -125,22 +129,26 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFFE0E3E7);
-  late Color primaryText = const Color(0xFF14181B);
-  late Color secondaryText = const Color(0xFF57636C);
-  late Color primaryBackground = const Color(0xFFF1F4F8);
-  late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color accent1 = const Color(0x4C4B39EF);
-  late Color accent2 = const Color(0x4D39D2C0);
-  late Color accent3 = const Color(0x4DEE8B60);
-  late Color accent4 = const Color(0xCCFFFFFF);
+  late Color primary = const Color(0xFFACBEB0);
+  late Color secondary = const Color(0xFFCFF1D5);
+  late Color tertiary = const Color(0xFF9AAC9E);
+  late Color alternate = const Color(0xFFB2E1BA);
+  late Color primaryText = const Color(0xFF1D161B);
+  late Color secondaryText = const Color(0xFF191418);
+  late Color primaryBackground = const Color(0xFFEBE5EA);
+  late Color secondaryBackground = const Color(0xFFD6CCD4);
+  late Color accent1 = const Color(0xFF6944FF);
+  late Color accent2 = const Color(0xFF8D76F0);
+  late Color accent3 = const Color(0xFF6946FF);
+  late Color accent4 = const Color(0x00FFFFFF);
   late Color success = const Color(0xFF249689);
   late Color warning = const Color(0xFFF9CF58);
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
+
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color lineColor = Color(0xFFE0E3E7);
+  late Color backgroundComponents = Color(0xFF1D2428);
 }
 
 abstract class Typography {
@@ -181,107 +189,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Outfit';
+  String get displayLargeFamily => 'Nunito Sans';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Outfit',
-        color: theme.primaryText,
+        'Nunito Sans',
+        color: Color(0xFF0F0601),
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Outfit';
+  String get displayMediumFamily => 'Nunito Sans';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Outfit';
+  String get displaySmallFamily => 'Nunito Sans';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Outfit';
+  String get headlineLargeFamily => 'Nunito Sans';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Outfit';
+  String get headlineMediumFamily => 'Nunito Sans';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Outfit';
+  String get headlineSmallFamily => 'Nunito Sans';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Outfit';
+  String get titleLargeFamily => 'Nunito Sans';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Outfit',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Readex Pro';
+  String get titleMediumFamily => 'Nunito Sans';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Readex Pro';
+  String get titleSmallFamily => 'Nunito Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Readex Pro';
+  String get labelLargeFamily => 'Nunito Sans';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Readex Pro';
+  String get labelMediumFamily => 'Nunito Sans';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Readex Pro';
+  String get labelSmallFamily => 'Nunito Sans';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Readex Pro';
+  String get bodyLargeFamily => 'Nunito Sans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Readex Pro';
+  String get bodyMediumFamily => 'Nunito Sans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Readex Pro';
+  String get bodySmallFamily => 'Nunito Sans';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Nunito Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -296,22 +304,26 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFF262D34);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF1D2428);
-  late Color secondaryBackground = const Color(0xFF14181B);
-  late Color accent1 = const Color(0x4C4B39EF);
-  late Color accent2 = const Color(0x4D39D2C0);
-  late Color accent3 = const Color(0x4DEE8B60);
-  late Color accent4 = const Color(0xB2262D34);
+  late Color primary = const Color(0xFFACBEB0);
+  late Color secondary = const Color(0xFF091F0D);
+  late Color tertiary = const Color(0xFFC2CDC4);
+  late Color alternate = const Color(0xFF102915);
+  late Color primaryText = const Color(0xFFEBE5EA);
+  late Color secondaryText = const Color(0xFFD6CCD4);
+  late Color primaryBackground = const Color(0xFF1D161B);
+  late Color secondaryBackground = const Color(0xFF191418);
+  late Color accent1 = const Color(0xFFE4DDFF);
+  late Color accent2 = const Color(0xFFC3B6F7);
+  late Color accent3 = const Color(0xFFA999E9);
+  late Color accent4 = const Color(0x00262D34);
   late Color success = const Color(0xFF249689);
   late Color warning = const Color(0xFFF9CF58);
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
+
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color lineColor = Color(0xFF22282F);
+  late Color backgroundComponents = Color(0xFF1D2428);
 }
 
 extension TextStyleHelper on TextStyle {
