@@ -596,62 +596,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    GoRouter.of(context)
-                                                        .prepareAuthEvent();
-                                                    final user =
-                                                        await authManager
-                                                            .signInWithFacebook(
-                                                                context);
-                                                    if (user == null) {
-                                                      return;
-                                                    }
-
-                                                    context.goNamedAuth(
-                                                        'ScannerPage',
-                                                        context.mounted);
-                                                  },
-                                                  child: Container(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          blurRadius: 5.0,
-                                                          color:
-                                                              Color(0x3314181B),
-                                                          offset:
-                                                              Offset(0.0, 2.0),
-                                                        )
-                                                      ],
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.00, 0.00),
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .facebookF,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      size: 24.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
                                                     context.pushNamed(
                                                         'Robin3PhoneAuthPage');
                                                   },
@@ -1309,62 +1253,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                             0.00, 0.00),
                                                     child: Icon(
                                                       Icons.person,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      size: 24.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    GoRouter.of(context)
-                                                        .prepareAuthEvent();
-                                                    final user =
-                                                        await authManager
-                                                            .signInWithFacebook(
-                                                                context);
-                                                    if (user == null) {
-                                                      return;
-                                                    }
-
-                                                    context.goNamedAuth(
-                                                        'ScannerPage',
-                                                        context.mounted);
-                                                  },
-                                                  child: Container(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          blurRadius: 5.0,
-                                                          color:
-                                                              Color(0x3314181B),
-                                                          offset:
-                                                              Offset(0.0, 2.0),
-                                                        )
-                                                      ],
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.00, 0.00),
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .facebookF,
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,

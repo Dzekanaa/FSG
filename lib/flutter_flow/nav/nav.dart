@@ -77,21 +77,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? ScannerPageWidget()
-          : Onboarding1PageWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? NavBarPage() : Onboarding1PageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? ScannerPageWidget()
+              ? NavBarPage()
               : Onboarding1PageWidget(),
         ),
         FFRoute(
           name: 'ScannerPage',
           path: '/scannerPage',
-          builder: (context, params) => ScannerPageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ScannerPage')
+              : ScannerPageWidget(),
         ),
         FFRoute(
           name: 'ClassificationPage',
@@ -124,6 +125,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'VerifyCode',
           path: '/verifyCode',
           builder: (context, params) => VerifyCodeWidget(),
+        ),
+        FFRoute(
+          name: 'HistoryPage',
+          path: '/historyPage',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'HistoryPage')
+              : HistoryPageWidget(),
+        ),
+        FFRoute(
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'profile')
+              : ProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

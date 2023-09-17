@@ -150,8 +150,8 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
                                         .secondaryText,
                                     size: 24.0,
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
+                                  onPressed: () async {
+                                    context.safePop();
                                   },
                                 ),
                               ),
