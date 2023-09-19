@@ -78,26 +78,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Onboarding1PageWidget(),
+          appStateNotifier.loggedIn ? ProfileWidget() : Onboarding1PageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? NavBarPage()
+              ? ProfileWidget()
               : Onboarding1PageWidget(),
-        ),
-        FFRoute(
-          name: 'ScannerPage',
-          path: '/scannerPage',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'ScannerPage')
-              : ScannerPageWidget(),
         ),
         FFRoute(
           name: 'ClassificationPage',
           path: '/classificationPage',
-          builder: (context, params) => ClassificationPageWidget(),
+          builder: (context, params) => ClassificationPageWidget(
+            barcode: params.getParam('barcode', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'Onboarding1Page',
@@ -129,16 +124,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HistoryPage',
           path: '/historyPage',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'HistoryPage')
-              : HistoryPageWidget(),
+          builder: (context, params) => HistoryPageWidget(),
         ),
         FFRoute(
           name: 'profile',
           path: '/profile',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'profile')
-              : ProfileWidget(),
+          builder: (context, params) => ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'editPage',
+          path: '/editPage',
+          builder: (context, params) => EditPageWidget(),
+        ),
+        FFRoute(
+          name: 'PreferencesPage',
+          path: '/preferencesPage',
+          builder: (context, params) => PreferencesPageWidget(),
+        ),
+        FFRoute(
+          name: 'ContactPage',
+          path: '/contactPage',
+          builder: (context, params) => ContactPageWidget(),
+        ),
+        FFRoute(
+          name: 'FSGHELP',
+          path: '/fsghelp',
+          builder: (context, params) => FsghelpWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

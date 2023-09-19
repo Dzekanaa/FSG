@@ -44,11 +44,15 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
             'Enter Pin Code Below',
-            style: FlutterFlowTheme.of(context).bodyMedium,
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Nunito Sans',
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.normal,
+                ),
           ),
           actions: [],
           centerTitle: true,
@@ -183,7 +187,7 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
                           return;
                         }
 
-                        context.goNamedAuth('ScannerPage', context.mounted);
+                        context.goNamedAuth('profile', context.mounted);
                       },
                       text: 'Verify',
                       options: FFButtonOptions(

@@ -1,5 +1,4 @@
 // Export pages
-export '/pages/scanner_page/scanner_page_widget.dart' show ScannerPageWidget;
 export '/classification_page/classification_page_widget.dart'
     show ClassificationPageWidget;
 export '/onboarding1_page/onboarding1_page_widget.dart'
@@ -12,3 +11,8 @@ export '/robin3_phone_auth_page/robin3_phone_auth_page_widget.dart'
 export '/verify_code/verify_code_widget.dart' show VerifyCodeWidget;
 export '/pages/history_page/history_page_widget.dart' show HistoryPageWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
+export '/edit_page/edit_page_widget.dart' show EditPageWidget;
+export '/preferences_page/preferences_page_widget.dart'
+    show PreferencesPageWidget;
+export '/contact_page/contact_page_widget.dart' show ContactPageWidget;
+export '/fsghelp/fsghelp_widget.dart' show FsghelpWidget;

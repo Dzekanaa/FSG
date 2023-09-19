@@ -212,6 +212,17 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => Onboarding1PageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().firsttime) {
+        setState(() {
+          FFAppState().firsttime = false;
+        });
+      } else {
+        context.goNamed('LoginPage');
+      }
+    });
   }
 
   @override
@@ -488,7 +499,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                 16.0, 12.0, 16.0, 44.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('ScannerPage');
+                                context.pushNamed('LoginPage');
                               },
                               text: 'Skip',
                               options: FFButtonOptions(

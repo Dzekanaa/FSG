@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -389,8 +390,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                 }
 
                                                 context.goNamedAuth(
-                                                    'ScannerPage',
-                                                    context.mounted);
+                                                    'profile', context.mounted);
                                               },
                                               text: 'Login',
                                               options: FFButtonOptions(
@@ -497,7 +497,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'ScannerPage',
+                                                        'profile',
                                                         context.mounted);
                                                   },
                                                   child: Container(
@@ -552,7 +552,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'ScannerPage',
+                                                        'profile',
                                                         context.mounted);
                                                   },
                                                   child: Container(
@@ -1066,9 +1066,38 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                   return;
                                                 }
 
+                                                await UsersRecord.collection
+                                                    .doc(user.uid)
+                                                    .update(
+                                                        createUsersRecordData(
+                                                      vegan: 'Not Interesed',
+                                                      vegetarian:
+                                                          'Not Interesed',
+                                                      ovovege: 'Not Interesed',
+                                                      pescatarian:
+                                                          'Not Interesed',
+                                                      whitemeat:
+                                                          'Not Interesed',
+                                                      halal: 'Not Interesed',
+                                                      kosher: 'Not Interesed',
+                                                      hindu: 'Not Interesed',
+                                                      jain: 'Not Interesed',
+                                                      celery: 'Not Interesed',
+                                                      cereals: 'Not Interesed',
+                                                      eggs: 'Not Interesed',
+                                                      fish: 'Not Interesed',
+                                                      milk: 'Not Interesed',
+                                                      nuts: 'Not Interesed',
+                                                      sugar: 'Not Interesed',
+                                                      gmo: 'Not Interesed',
+                                                      organic: 'Not Interesed',
+                                                      sesame: 'Not Interesed',
+                                                      sulphurdioxide:
+                                                          'Not Interesed',
+                                                    ));
+
                                                 context.goNamedAuth(
-                                                    'ScannerPage',
-                                                    context.mounted);
+                                                    'profile', context.mounted);
                                               },
                                               text: 'Create Account',
                                               options: FFButtonOptions(
@@ -1171,7 +1200,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'ScannerPage',
+                                                        'profile',
                                                         context.mounted);
                                                   },
                                                   child: Container(
@@ -1226,7 +1255,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'ScannerPage',
+                                                        'profile',
                                                         context.mounted);
                                                   },
                                                   child: Container(

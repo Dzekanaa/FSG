@@ -16,12 +16,19 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _firsttime = prefs.getBool('ff_firsttime') ?? _firsttime;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   int _count = 0;
   int get count => _count;
@@ -33,6 +40,13 @@ class FFAppState extends ChangeNotifier {
   bool get boolprovera => _boolprovera;
   set boolprovera(bool _value) {
     _boolprovera = _value;
+  }
+
+  bool _firsttime = true;
+  bool get firsttime => _firsttime;
+  set firsttime(bool _value) {
+    _firsttime = _value;
+    prefs.setBool('ff_firsttime', _value);
   }
 }
 

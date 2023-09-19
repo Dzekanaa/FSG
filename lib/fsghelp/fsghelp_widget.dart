@@ -4,32 +4,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'classification_page_model.dart';
-export 'classification_page_model.dart';
+import 'fsghelp_model.dart';
+export 'fsghelp_model.dart';
 
-class ClassificationPageWidget extends StatefulWidget {
-  const ClassificationPageWidget({
-    Key? key,
-    String? barcode,
-  })  : this.barcode = barcode ?? '/',
-        super(key: key);
-
-  final String barcode;
+class FsghelpWidget extends StatefulWidget {
+  const FsghelpWidget({Key? key}) : super(key: key);
 
   @override
-  _ClassificationPageWidgetState createState() =>
-      _ClassificationPageWidgetState();
+  _FsghelpWidgetState createState() => _FsghelpWidgetState();
 }
 
-class _ClassificationPageWidgetState extends State<ClassificationPageWidget> {
-  late ClassificationPageModel _model;
+class _FsghelpWidgetState extends State<FsghelpWidget> {
+  late FsghelpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ClassificationPageModel());
+    _model = createModel(context, () => FsghelpModel());
   }
 
   @override
@@ -55,7 +48,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget> {
             'Page Title',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Nunito Sans',
-                  color: Colors.white,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 22.0,
                 ),
           ),
@@ -65,22 +58,9 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/blob-scene-haikei.png',
-                ).image,
-              ),
-            ),
-            child: Text(
-              widget.barcode,
-              style: FlutterFlowTheme.of(context).bodyMedium,
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [],
           ),
         ),
       ),

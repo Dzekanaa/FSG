@@ -135,25 +135,21 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 16.0, 0.0),
-                                child: FlutterFlowIconButton(
-                                  borderColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  borderRadius: 30.0,
-                                  borderWidth: 2.0,
-                                  buttonSize: 46.0,
-                                  icon: Icon(
-                                    Icons.arrow_back_rounded,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 24.0,
-                                  ),
-                                  onPressed: () async {
-                                    context.safePop();
-                                  },
+                              FlutterFlowIconButton(
+                                borderColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                borderRadius: 30.0,
+                                borderWidth: 2.0,
+                                buttonSize: 60.0,
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 30.0,
                                 ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
                               ),
                               Expanded(
                                 child: Text(
