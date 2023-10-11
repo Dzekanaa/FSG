@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '../../auth/base_auth_user_provider.dart';
@@ -124,7 +125,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HistoryPage',
           path: '/historyPage',
-          builder: (context, params) => HistoryPageWidget(),
+          builder: (context, params) => HistoryPageWidget(
+            nema: params.getParam('nema', ParamType.bool),
+          ),
         ),
         FFRoute(
           name: 'profile',
@@ -150,6 +153,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'FSGHELP',
           path: '/fsghelp',
           builder: (context, params) => FsghelpWidget(),
+        ),
+        FFRoute(
+          name: 'FAQs',
+          path: '/fAQs',
+          builder: (context, params) => FAQsWidget(),
+        ),
+        FFRoute(
+          name: 'FoodChoises',
+          path: '/foodChoises',
+          builder: (context, params) => FoodChoisesWidget(),
+        ),
+        FFRoute(
+          name: 'AboutUs',
+          path: '/aboutUs',
+          builder: (context, params) => AboutUsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -376,4 +394,24 @@ class TransitionInfo {
   final Alignment? alignment;
 
   static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+}
+
+class RootPageContext {
+  const RootPageContext(this.isRootPage, [this.errorRoute]);
+  final bool isRootPage;
+  final String? errorRoute;
+
+  static bool isInactiveRootPage(BuildContext context) {
+    final rootPageContext = context.read<RootPageContext?>();
+    final isRootPage = rootPageContext?.isRootPage ?? false;
+    final location = GoRouter.of(context).location;
+    return isRootPage &&
+        location != '/' &&
+        location != rootPageContext?.errorRoute;
+  }
+
+  static Widget wrap(Widget child, {String? errorRoute}) => Provider.value(
+        value: RootPageContext(true, errorRoute),
+        child: child,
+      );
 }

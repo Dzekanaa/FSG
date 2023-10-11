@@ -7,5 +7,17 @@ service cloud.firestore {
       allow write: if request.auth.uid == document;
       allow delete: if false;
     }
+
+    match /users/{parent}/history/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/history/{document} {
+      allow read: if true;
+    }
+
   }
 }

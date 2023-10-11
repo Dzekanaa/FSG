@@ -26,20 +26,10 @@ class UsersRecord extends FirestoreRecord {
   String get displayName => _displayName ?? '';
   bool hasDisplayName() => _displayName != null;
 
-  // "photo_url" field.
-  String? _photoUrl;
-  String get photoUrl => _photoUrl ?? '';
-  bool hasPhotoUrl() => _photoUrl != null;
-
   // "uid" field.
   String? _uid;
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
-
-  // "created_time" field.
-  DateTime? _createdTime;
-  DateTime? get createdTime => _createdTime;
-  bool hasCreatedTime() => _createdTime != null;
 
   // "phone_number" field.
   String? _phoneNumber;
@@ -146,12 +136,25 @@ class UsersRecord extends FirestoreRecord {
   String get sulphurdioxide => _sulphurdioxide ?? '';
   bool hasSulphurdioxide() => _sulphurdioxide != null;
 
+  // "history" field.
+  DocumentReference? _history;
+  DocumentReference? get history => _history;
+  bool hasHistory() => _history != null;
+
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
+
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
-    _photoUrl = snapshotData['photo_url'] as String?;
     _uid = snapshotData['uid'] as String?;
-    _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _vegan = snapshotData['vegan'] as String?;
     _vegetarian = snapshotData['vegetarian'] as String?;
@@ -173,6 +176,9 @@ class UsersRecord extends FirestoreRecord {
     _organic = snapshotData['organic'] as String?;
     _sesame = snapshotData['sesame'] as String?;
     _sulphurdioxide = snapshotData['sulphurdioxide'] as String?;
+    _history = snapshotData['history'] as DocumentReference?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -211,9 +217,7 @@ class UsersRecord extends FirestoreRecord {
 Map<String, dynamic> createUsersRecordData({
   String? email,
   String? displayName,
-  String? photoUrl,
   String? uid,
-  DateTime? createdTime,
   String? phoneNumber,
   String? vegan,
   String? vegetarian,
@@ -235,14 +239,15 @@ Map<String, dynamic> createUsersRecordData({
   String? organic,
   String? sesame,
   String? sulphurdioxide,
+  DocumentReference? history,
+  String? photoUrl,
+  DateTime? createdTime,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'email': email,
       'display_name': displayName,
-      'photo_url': photoUrl,
       'uid': uid,
-      'created_time': createdTime,
       'phone_number': phoneNumber,
       'vegan': vegan,
       'vegetarian': vegetarian,
@@ -264,6 +269,9 @@ Map<String, dynamic> createUsersRecordData({
       'organic': organic,
       'sesame': sesame,
       'sulphurdioxide': sulphurdioxide,
+      'history': history,
+      'photo_url': photoUrl,
+      'created_time': createdTime,
     }.withoutNulls,
   );
 
@@ -277,9 +285,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
   bool equals(UsersRecord? e1, UsersRecord? e2) {
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
-        e1?.photoUrl == e2?.photoUrl &&
         e1?.uid == e2?.uid &&
-        e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.vegan == e2?.vegan &&
         e1?.vegetarian == e2?.vegetarian &&
@@ -300,16 +306,17 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.gmo == e2?.gmo &&
         e1?.organic == e2?.organic &&
         e1?.sesame == e2?.sesame &&
-        e1?.sulphurdioxide == e2?.sulphurdioxide;
+        e1?.sulphurdioxide == e2?.sulphurdioxide &&
+        e1?.history == e2?.history &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.createdTime == e2?.createdTime;
   }
 
   @override
   int hash(UsersRecord? e) => const ListEquality().hash([
         e?.email,
         e?.displayName,
-        e?.photoUrl,
         e?.uid,
-        e?.createdTime,
         e?.phoneNumber,
         e?.vegan,
         e?.vegetarian,
@@ -330,7 +337,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.gmo,
         e?.organic,
         e?.sesame,
-        e?.sulphurdioxide
+        e?.sulphurdioxide,
+        e?.history,
+        e?.photoUrl,
+        e?.createdTime
       ]);
 
   @override
