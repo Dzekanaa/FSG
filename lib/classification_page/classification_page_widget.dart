@@ -174,8 +174,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                           ClipRRect(
                             borderRadius: BorderRadius.circular(16.0),
                             child: Image.network(
-                              GetMenuItemCall.img(
-                                classificationPageGetMenuItemResponse.jsonBody,
+                              valueOrDefault<String>(
+                                GetMenuItemCall.img(
+                                  classificationPageGetMenuItemResponse
+                                      .jsonBody,
+                                ),
+                                'https://www.pacificfoodmachinery.com.au/media/catalog/product/placeholder/default/no-product-image-400x400_8.png',
                               ),
                               width: 140.0,
                               height: 168.0,
@@ -192,9 +196,20 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                 AutoSizeText(
                                   valueOrDefault<String>(
                                     GetMenuItemCall.title(
-                                      classificationPageGetMenuItemResponse
-                                          .jsonBody,
-                                    ).toString(),
+                                                  classificationPageGetMenuItemResponse
+                                                      .jsonBody,
+                                                ).toString() !=
+                                                null &&
+                                            GetMenuItemCall.title(
+                                                  classificationPageGetMenuItemResponse
+                                                      .jsonBody,
+                                                ).toString() !=
+                                                ''
+                                        ? 'Product'
+                                        : GetMenuItemCall.title(
+                                            classificationPageGetMenuItemResponse
+                                                .jsonBody,
+                                          ).toString(),
                                     'Product',
                                   ).maybeHandleOverflow(
                                     maxChars: 15,

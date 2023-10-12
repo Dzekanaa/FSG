@@ -455,11 +455,19 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
                                                             return Text(
                                                               valueOrDefault<
                                                                   String>(
-                                                                GetMenuItemCall
-                                                                    .title(
-                                                                  textGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ).toString(),
+                                                                GetMenuItemCall.title(
+                                                                              textGetMenuItemResponse.jsonBody,
+                                                                            ).toString() !=
+                                                                            null &&
+                                                                        GetMenuItemCall.title(
+                                                                              textGetMenuItemResponse.jsonBody,
+                                                                            ).toString() !=
+                                                                            ''
+                                                                    ? 'Product'
+                                                                    : GetMenuItemCall.title(
+                                                                        textGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ).toString(),
                                                                 'Product',
                                                               ),
                                                               style: FlutterFlowTheme
