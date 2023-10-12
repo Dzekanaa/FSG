@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-        android:label="FoodScannerGenius"
+        android:label="Food Scan Genius"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -63,7 +63,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="fsgproject" android:host="fsgproject.com" />
+                <data android:scheme="foodscangenius" android:host="foodscangenius.com" />
             </intent-filter>
 
         </activity>

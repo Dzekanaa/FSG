@@ -347,15 +347,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: FlutterFlowTheme.of(context).accent1,
+                  child: Image.asset(
+                    'assets/images/Food_scan_geniusLOGO_NR_-03.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;

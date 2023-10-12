@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class FSGProjectFirebaseUser extends BaseAuthUser {
-  FSGProjectFirebaseUser(this.user);
+class FoodScanGeniusFirebaseUser extends BaseAuthUser {
+  FoodScanGeniusFirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -48,17 +48,17 @@ class FSGProjectFirebaseUser extends BaseAuthUser {
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
   static BaseAuthUser fromFirebaseUser(User? user) =>
-      FSGProjectFirebaseUser(user);
+      FoodScanGeniusFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> fSGProjectFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> foodScanGeniusFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = FSGProjectFirebaseUser(user);
+        currentUser = FoodScanGeniusFirebaseUser(user);
         return currentUser!;
       },
     );

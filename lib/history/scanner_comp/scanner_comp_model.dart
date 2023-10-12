@@ -18,10 +18,6 @@ class ScannerCompModel extends FlutterFlowModel<ScannerCompWidget> {
   ///  State fields for stateful widgets in this component.
 
   var barcode = '';
-  // Stores action output result for [Backend Call - API (Get Menu item)] action in Button widget.
-  ApiCallResponse? succes1;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  HistoryRecord? oki;
   // State field(s) for barcodeText widget.
   TextEditingController? barcodeTextController;
   String? Function(BuildContext, String?)? barcodeTextControllerValidator;

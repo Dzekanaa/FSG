@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-    <string name="app_name">FoodScannerGenius</string>
+    <string name="app_name">Food Scan Genius</string>
     <string name="facebook_app_id">1084921249347535</string>
                <string name="fb_login_protocol_scheme">fb1084921249347535</string>
 </resources>

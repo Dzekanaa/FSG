@@ -22,3 +22,19 @@ String latLongString(
     return location.longitude.toString();
   }
 }
+
+List<String>? skini3char(List<String>? inputList) {
+  final outputList = <String>[];
+  if (inputList == null) {
+    return inputList;
+  }
+  for (var inputText in inputList) {
+    if (inputText.length >= 3) {
+      outputList.add(inputText.substring(3)); // Remove the first 3 characters
+    } else {
+      outputList.add(inputText); // Return the input as-is if it's too short
+    }
+  }
+
+  return outputList;
+}

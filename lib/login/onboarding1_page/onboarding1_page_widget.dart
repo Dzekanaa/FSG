@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -474,6 +476,33 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                     return;
                                   }
 
+                                  await currentUserReference!
+                                      .update(createUsersRecordData(
+                                    vegan: 'Tracked',
+                                    vegetarian: 'Tracked',
+                                    ovovege: 'Tracked',
+                                    pescatarian: 'Tracked',
+                                    whitemeat: 'Tracked',
+                                    halal: 'Tracked',
+                                    kosher: 'Tracked',
+                                    hindu: 'Tracked',
+                                    jain: 'Tracked',
+                                    celery: 'Tracked',
+                                    cereals: 'Tracked',
+                                    eggs: 'Tracked',
+                                    fish: 'Tracked',
+                                    milk: 'Tracked',
+                                    nuts: 'Tracked',
+                                    sugar: 'Tracked',
+                                    gmo: 'Tracked',
+                                    organic: 'Tracked',
+                                    sesame: 'Tracked',
+                                    sulphurdioxide: 'Tracked',
+                                  ));
+                                  setState(() {
+                                    FFAppState().anonimus = true;
+                                  });
+
                                   context.pushNamedAuth(
                                       'profile', context.mounted);
                                 }
@@ -516,6 +545,33 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                 if (user == null) {
                                   return;
                                 }
+
+                                await currentUserReference!
+                                    .update(createUsersRecordData(
+                                  vegan: 'Tracked',
+                                  vegetarian: 'Tracked',
+                                  ovovege: 'Tracked',
+                                  pescatarian: 'Tracked',
+                                  whitemeat: 'Tracked',
+                                  halal: 'Tracked',
+                                  kosher: 'Tracked',
+                                  hindu: 'Tracked',
+                                  jain: 'Tracked',
+                                  celery: 'Tracked',
+                                  cereals: 'Tracked',
+                                  eggs: 'Tracked',
+                                  fish: 'Tracked',
+                                  milk: 'Tracked',
+                                  nuts: 'Tracked',
+                                  sugar: 'Tracked',
+                                  gmo: 'Tracked',
+                                  organic: 'Tracked',
+                                  sesame: 'Tracked',
+                                  sulphurdioxide: 'Tracked',
+                                ));
+                                setState(() {
+                                  FFAppState().anonimus = true;
+                                });
 
                                 context.pushNamedAuth(
                                     'profile', context.mounted);

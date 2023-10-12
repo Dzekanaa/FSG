@@ -12,7 +12,28 @@
           "package_name": "com.mycompany.fsgproject"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "32920338432-qvfg26r6fp1c3c8mnunpmg9etaltfqkv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.fsgproject",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "32920338432-vs9465n6d2poiotoc1boif5ik71mcnji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.fsgproject",
+            "certificate_hash": "d08d3b47b05f66f0309f559253344e68913f3cec"
+          }
+        },
+        {
+          "client_id": "32920338432-djtv06it2clannna3nr09ercf0v75mue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBRsdxvgL4-jJ9Db1IRbB_SazwRy67JEug"
@@ -20,7 +41,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32920338432-djtv06it2clannna3nr09ercf0v75mue.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "32920338432-vd51ij378adpiigrvsngicppf0pu9tge.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.fsgproject"
+              }
+            }
+          ]
         }
       }
     }

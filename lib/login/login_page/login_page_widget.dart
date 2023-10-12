@@ -1361,6 +1361,36 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                         return;
                                                       }
 
+                                                      await currentUserReference!
+                                                          .update(
+                                                              createUsersRecordData(
+                                                        vegan: 'Tracked',
+                                                        vegetarian: 'Tracked',
+                                                        ovovege: 'Tracked',
+                                                        pescatarian: 'Tracked',
+                                                        whitemeat: 'Tracked',
+                                                        halal: 'Tracked',
+                                                        kosher: 'Tracked',
+                                                        hindu: 'Tracked',
+                                                        jain: 'Tracked',
+                                                        celery: 'Tracked',
+                                                        cereals: 'Tracked',
+                                                        eggs: 'Tracked',
+                                                        fish: 'Tracked',
+                                                        milk: 'Tracked',
+                                                        nuts: 'Tracked',
+                                                        sugar: 'Tracked',
+                                                        gmo: 'Tracked',
+                                                        organic: 'Tracked',
+                                                        sesame: 'Tracked',
+                                                        sulphurdioxide:
+                                                            'Tracked',
+                                                      ));
+                                                      setState(() {
+                                                        FFAppState().anonimus =
+                                                            true;
+                                                      });
+
                                                       context.goNamedAuth(
                                                           'profile',
                                                           context.mounted);

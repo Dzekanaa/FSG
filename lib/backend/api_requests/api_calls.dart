@@ -50,10 +50,6 @@ class GetMenuItemCall {
         response,
         r'''$.data.product_name''',
       );
-  static dynamic servingsize(dynamic response) => getJsonField(
-        response,
-        r'''$.data.serving_size''',
-      );
   static dynamic ecograde(dynamic response) => getJsonField(
         response,
         r'''$.data.ecoscore_grade''',
@@ -280,6 +276,10 @@ class GetMenuItemCall {
         response,
         r'''$.data.ingredients[*].id''',
         true,
+      );
+  static dynamic serving(dynamic response) => getJsonField(
+        response,
+        r'''$.data.serving_quantity''',
       );
 }
 

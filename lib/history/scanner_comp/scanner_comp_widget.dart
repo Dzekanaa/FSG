@@ -173,88 +173,13 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                             final buttonGetMenuItemResponse = snapshot.data!;
                             return FFButtonWidget(
                               onPressed: () async {
-                                currentUserLocationValue =
-                                    await getCurrentUserLocation(
-                                        defaultLocation: LatLng(0.0, 0.0));
                                 _model.barcode =
                                     await FlutterBarcodeScanner.scanBarcode(
                                   '#C62828', // scanning line color
                                   'Cancel', // cancel button text
                                   true, // whether to show the flash icon
-                                  ScanMode.BARCODE,
+                                  ScanMode.QR,
                                 );
-
-                                _model.succes1 = await GetMenuItemCall.call(
-                                  barcodeAPI: _model.barcodeTextController.text,
-                                  latitude: functions.latLongString(
-                                      currentUserLocationValue!, true),
-                                  longitude: functions.latLongString(
-                                      currentUserLocationValue!, false),
-                                  uid: currentUserUid,
-                                );
-                                if (GetMenuItemCall.ingredientsList(
-                                      (_model.succes1?.jsonBody ?? ''),
-                                    ).length >
-                                    0) {
-                                  var historyRecordReference =
-                                      HistoryRecord.createDoc(
-                                          currentUserReference!);
-                                  await historyRecordReference.set({
-                                    ...createHistoryRecordData(
-                                      barcode: _model.barcode,
-                                      grade: GetMenuItemCall.grade(
-                                        buttonGetMenuItemResponse.jsonBody,
-                                      ).toString(),
-                                    ),
-                                    ...mapToFirestore(
-                                      {
-                                        'date': FieldValue.serverTimestamp(),
-                                      },
-                                    ),
-                                  });
-                                  _model.oki =
-                                      HistoryRecord.getDocumentFromData({
-                                    ...createHistoryRecordData(
-                                      barcode: _model.barcode,
-                                      grade: GetMenuItemCall.grade(
-                                        buttonGetMenuItemResponse.jsonBody,
-                                      ).toString(),
-                                    ),
-                                    ...mapToFirestore(
-                                      {
-                                        'date': DateTime.now(),
-                                      },
-                                    ),
-                                  }, historyRecordReference);
-
-                                  context.goNamed(
-                                    'ClassificationPage',
-                                    queryParameters: {
-                                      'barcode': serializeParam(
-                                        _model.barcode,
-                                        ParamType.String,
-                                      ),
-                                    }.withoutNulls,
-                                  );
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Error'),
-                                        content: Text(
-                                            'There is no product with this barcode, Try Again.'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                }
 
                                 setState(() {});
                               },
@@ -363,7 +288,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w500,
                                           ),
-                                      hintText: 'Bar code',
+                                      hintText: _model.barcode,
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

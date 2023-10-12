@@ -49,6 +49,12 @@ class FFAppState extends ChangeNotifier {
     _firsttime = _value;
     prefs.setBool('ff_firsttime', _value);
   }
+
+  bool _anonimus = false;
+  bool get anonimus => _anonimus;
+  set anonimus(bool _value) {
+    _anonimus = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

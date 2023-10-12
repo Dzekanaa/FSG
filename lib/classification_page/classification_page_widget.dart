@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -109,7 +110,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.pop();
+                  context.pushNamed('HistoryPage');
                 },
               ),
               title: Text(
@@ -3032,17 +3033,20 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  -1.00, 5.00),
+                                                                  -1.00, 6.00),
                                                           child:
                                                               FlutterFlowChartLegendWidget(
-                                                            entries: (GetMenuItemCall
-                                                                    .ingrText(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ) as List)
-                                                                .map<String>((s) =>
-                                                                    s.toString())
-                                                                .toList()!
+                                                            entries: functions
+                                                                .skini3char((GetMenuItemCall
+                                                                        .ingrText(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ) as List)
+                                                                    .map<String>(
+                                                                        (s) => s
+                                                                            .toString())
+                                                                    .toList()
+                                                                    ?.toList())!
                                                                 .asMap()
                                                                 .entries
                                                                 .map(
@@ -4462,41 +4466,45 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 16.0, 0.0, 16.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              'Serving Size: ',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Nunito Sans',
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                            Text(
-                              valueOrDefault<String>(
-                                GetMenuItemCall.servingsize(
-                                  classificationPageGetMenuItemResponse
-                                      .jsonBody,
-                                ).toString(),
-                                'N / A ',
+                      if (GetMenuItemCall.serving(
+                            classificationPageGetMenuItemResponse.jsonBody,
+                          ) !=
+                          null)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 16.0, 0.0, 16.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                'Serving Size: ',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Nunito Sans',
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Nunito Sans',
-                                    fontSize: 18.0,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                            ),
-                          ],
+                              Text(
+                                valueOrDefault<String>(
+                                  GetMenuItemCall.serving(
+                                    classificationPageGetMenuItemResponse
+                                        .jsonBody,
+                                  ).toString(),
+                                  'N / A ',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Nunito Sans',
+                                      fontSize: 18.0,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),

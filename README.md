@@ -1,4 +1,4 @@
-# FSG-project
+# FoodScanGenius
 
 A new Flutter project.
 

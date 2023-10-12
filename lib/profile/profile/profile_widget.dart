@@ -32,7 +32,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (!(currentUserEmail != null && currentUserEmail != '')) {
+      if (FFAppState().anonimus == true) {
         await showModalBottomSheet(
           isScrollControlled: true,
           backgroundColor: Colors.transparent,
@@ -45,6 +45,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             );
           },
         ).then((value) => safeSetState(() {}));
+
+        FFAppState().update(() {
+          FFAppState().anonimus = false;
+        });
       }
     });
   }
