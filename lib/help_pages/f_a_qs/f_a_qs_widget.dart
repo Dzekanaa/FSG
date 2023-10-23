@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'f_a_qs_model.dart';
@@ -25,6 +26,17 @@ class _FAQsWidgetState extends State<FAQsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FAQsModel());
+
+    _model.expandableController1 = ExpandableController(initialExpanded: false);
+    _model.expandableController2 = ExpandableController(initialExpanded: false);
+    _model.expandableController3 = ExpandableController(initialExpanded: false);
+    _model.expandableController4 = ExpandableController(initialExpanded: false);
+    _model.expandableController5 = ExpandableController(initialExpanded: false);
+    _model.expandableController6 = ExpandableController(initialExpanded: false);
+    _model.expandableController7 = ExpandableController(initialExpanded: false);
+    _model.expandableController8 = ExpandableController(initialExpanded: false);
+    _model.expandableController9 = ExpandableController(initialExpanded: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,6 +48,15 @@ class _FAQsWidgetState extends State<FAQsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -92,7 +113,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController1,
                           child: ExpandablePanel(
                             header: Text(
                               '1. What is FoodScanGenius?',
@@ -147,7 +168,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController2,
                           child: ExpandablePanel(
                             header: Text(
                               '2. How does FoodScanGenius work?',
@@ -202,7 +223,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController3,
                           child: ExpandablePanel(
                             header: Text(
                               '3. Can FoodScanGenius accommodate specific dietary needs?',
@@ -259,7 +280,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController4,
                           child: ExpandablePanel(
                             header: Text(
                               '4. Is FoodScanGenius available in my country?',
@@ -314,7 +335,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController5,
                           child: ExpandablePanel(
                             header: Text(
                               '5. How accurate is the information provided by FoodScanGenius?',
@@ -369,7 +390,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController6,
                           child: ExpandablePanel(
                             header: Text(
                               '6. Can I save and track my scanned products?',
@@ -424,7 +445,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController7,
                           child: ExpandablePanel(
                             header: Text(
                               '7. Is FoodScanGenius available for both iOS and Android?',
@@ -479,7 +500,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController8,
                           child: ExpandablePanel(
                             header: Text(
                               '8. How secure is my data?',
@@ -534,7 +555,7 @@ class _FAQsWidgetState extends State<FAQsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController9,
                           child: ExpandablePanel(
                             header: Text(
                               '9. How can I contact support if I have further questions?',

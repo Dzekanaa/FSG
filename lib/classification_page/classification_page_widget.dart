@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'classification_page_model.dart';
@@ -43,6 +44,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
       length: 4,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -54,6 +56,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
     final chartPieChartColorsList = [
       Color(0xFF400040),
@@ -121,7 +132,37 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: [
+                FlutterFlowIconButton(
+                  borderRadius: 20.0,
+                  borderWidth: 0.0,
+                  buttonSize: 40.0,
+                  icon: Icon(
+                    Icons.thumb_up_outlined,
+                    color: FlutterFlowTheme.of(context).accent1,
+                    size: 24.0,
+                  ),
+                  onPressed: () {
+                    print('IconButton pressed ...');
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderRadius: 20.0,
+                    borderWidth: 0.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.thumb_down_outlined,
+                      color: FlutterFlowTheme.of(context).accent1,
+                      size: 24.0,
+                    ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                ),
+              ],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -193,36 +234,32 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                AutoSizeText(
-                                  valueOrDefault<String>(
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 8.0, 0.0, 0.0),
+                                  child: AutoSizeText(
                                     GetMenuItemCall.title(
-                                                  classificationPageGetMenuItemResponse
-                                                      .jsonBody,
-                                                ).toString() !=
-                                                null &&
-                                            GetMenuItemCall.title(
-                                                  classificationPageGetMenuItemResponse
-                                                      .jsonBody,
-                                                ).toString() !=
-                                                ''
+                                              classificationPageGetMenuItemResponse
+                                                  .jsonBody,
+                                            ).toString() ==
+                                            'null'
                                         ? 'Product'
                                         : GetMenuItemCall.title(
                                             classificationPageGetMenuItemResponse
                                                 .jsonBody,
-                                          ).toString(),
-                                    'Product',
-                                  ).maybeHandleOverflow(
-                                    maxChars: 15,
-                                    replacement: '…',
+                                          ).toString().maybeHandleOverflow(
+                                              maxChars: 15,
+                                              replacement: '…',
+                                            ),
+                                    maxLines: 2,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Nunito Sans',
+                                          fontSize: 22.0,
+                                        ),
+                                    minFontSize: 20.0,
                                   ),
-                                  maxLines: 2,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
-                                        fontFamily: 'Nunito Sans',
-                                        fontSize: 22.0,
-                                      ),
-                                  minFontSize: 20.0,
                                 ),
                               ],
                             ),
@@ -315,6 +352,55 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               CrossAxisAlignment
                                                                   .center,
                                                           children: [
+                                                            if (!((valueOrDefault(currentUserDocument?.vegan, '') == 'Not Interesed') &&
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.ovovege,
+                                                                        '') ==
+                                                                    'Not Interesed') &&
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.pescatarian,
+                                                                        '') ==
+                                                                    'Not Interesed') &&
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.whitemeat,
+                                                                        '') ==
+                                                                    'Not Interesed')))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.00,
+                                                                        0.00),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                                  child:
+                                                                      AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            Text(
+                                                                      'Diet Choices',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Nunito Sans',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).accent1,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             if (valueOrDefault<
                                                                 bool>(
                                                               (valueOrDefault(
@@ -814,6 +900,50 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ],
                                                                 ),
                                                               ),
+                                                            if ((valueOrDefault(currentUserDocument?.halal, '') != 'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.jain,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.kosher,
+                                                                        '') !=
+                                                                    'Not Interesed'))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.00,
+                                                                        0.00),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                                  child:
+                                                                      AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            Text(
+                                                                      'Religious Restrictions',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Nunito Sans',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).accent1,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             if (valueOrDefault<
                                                                 bool>(
                                                               (valueOrDefault(
@@ -1186,6 +1316,50 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ],
                                                                 ),
                                                               ),
+                                                            if ((valueOrDefault(currentUserDocument?.gmo, '') != 'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.organic,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.sulphurdioxide,
+                                                                        '') !=
+                                                                    'Not Interesed'))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.00,
+                                                                        0.00),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                                  child:
+                                                                      AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            Text(
+                                                                      'Sustainability choices',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Nunito Sans',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).accent1,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             if (valueOrDefault<
                                                                 bool>(
                                                               (valueOrDefault(
@@ -1556,6 +1730,70 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       ),
                                                                     ),
                                                                   ],
+                                                                ),
+                                                              ),
+                                                            if ((valueOrDefault(currentUserDocument?.celery, '') != 'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.cereals,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.eggs,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.milk,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.fish,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.nuts,
+                                                                        '') !=
+                                                                    'Not Interesed') ||
+                                                                (valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.sesame,
+                                                                        '') !=
+                                                                    'Not Interesed'))
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        -1.00,
+                                                                        0.00),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                                  child:
+                                                                      AuthUserStreamWidget(
+                                                                    builder:
+                                                                        (context) =>
+                                                                            Text(
+                                                                      'Allergens',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Nunito Sans',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).accent1,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                               ),
                                                             if (valueOrDefault<
@@ -2824,15 +3062,18 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               ),
                                                         ),
                                                         Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .grade(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
+                                                          GetMenuItemCall.grade(
+                                                                    classificationPageGetMenuItemResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                      .toString() ==
+                                                                  'null'
+                                                              ? 'unknown'
+                                                              : GetMenuItemCall
+                                                                  .grade(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -3018,12 +3259,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                       children: [
                                                         FlutterFlowPieChart(
                                                           data: FFPieChartData(
-                                                            values:
-                                                                GetMenuItemCall
+                                                            values: GetMenuItemCall
                                                                     .ingrValue(
                                                               classificationPageGetMenuItemResponse
                                                                   .jsonBody,
-                                                            )!,
+                                                            )!
+                                                                .where((e) =>
+                                                                    e != 0.0)
+                                                                .toList(),
                                                             colors:
                                                                 chartPieChartColorsList,
                                                             radius: [125.0],

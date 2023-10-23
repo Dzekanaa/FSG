@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,7 +28,10 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
     _model = createModel(context, () => ContactPageModel());
 
     _model.subjectController ??= TextEditingController();
+    _model.subjectFocusNode ??= FocusNode();
     _model.messageController ??= TextEditingController();
+    _model.messageFocusNode ??= FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -39,6 +43,15 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -115,6 +128,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                     child: TextFormField(
                       controller: _model.subjectController,
+                      focusNode: _model.subjectFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Title',
@@ -160,6 +174,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                   ),
                   TextFormField(
                     controller: _model.messageController,
+                    focusNode: _model.messageFocusNode,
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'Message',

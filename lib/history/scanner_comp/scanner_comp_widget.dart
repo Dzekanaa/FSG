@@ -7,7 +7,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,9 +41,20 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
     super.initState();
     _model = createModel(context, () => ScannerCompModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        FFAppState().anonimus = false;
+      });
+    });
+
     getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => setState(() => currentUserLocationValue = loc));
     _model.barcodeTextController ??= TextEditingController();
+    _model.barcodeTextFocusNode ??= FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.barcodeTextController?.text = 'BarCode';
+        }));
   }
 
   @override
@@ -181,6 +195,11 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                   ScanMode.QR,
                                 );
 
+                                setState(() {
+                                  _model.barcodeTextController?.text =
+                                      _model.barcode!;
+                                });
+
                                 setState(() {});
                               },
                               text: 'Scan Now',
@@ -276,6 +295,12 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                       0.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.barcodeTextController,
+                                    focusNode: _model.barcodeTextFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.barcodeTextController',
+                                      Duration(milliseconds: 2000),
+                                      () => setState(() {}),
+                                    ),
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Your Bar Code...',
@@ -288,7 +313,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w500,
                                           ),
-                                      hintText: _model.barcode,
+                                      hintText: 'Bar code',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -339,6 +364,21 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               20.0, 24.0, 20.0, 24.0),
+                                      suffixIcon: _model.barcodeTextController!
+                                              .text.isNotEmpty
+                                          ? InkWell(
+                                              onTap: () async {
+                                                _model.barcodeTextController
+                                                    ?.clear();
+                                                setState(() {});
+                                              },
+                                              child: Icon(
+                                                Icons.clear,
+                                                color: Color(0xFF757575),
+                                                size: 22.0,
+                                              ),
+                                            )
+                                          : null,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -347,6 +387,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                         ),
+                                    keyboardType: TextInputType.number,
                                     validator: _model
                                         .barcodeTextControllerValidator
                                         .asValidator(context),
@@ -389,103 +430,129 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                     buttonSize: 60.0,
                                     fillColor:
                                         FlutterFlowTheme.of(context).accent1,
+                                    disabledColor:
+                                        FlutterFlowTheme.of(context).accent3,
                                     icon: Icon(
                                       Icons.chevron_right_rounded,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       size: 24.0,
                                     ),
-                                    onPressed: () async {
-                                      currentUserLocationValue =
-                                          await getCurrentUserLocation(
-                                              defaultLocation:
-                                                  LatLng(0.0, 0.0));
-                                      _model.succes =
-                                          await GetMenuItemCall.call(
-                                        barcodeAPI:
-                                            _model.barcodeTextController.text,
-                                        latitude: functions.latLongString(
-                                            currentUserLocationValue!, true),
-                                        longitude: functions.latLongString(
-                                            currentUserLocationValue!, false),
-                                        uid: currentUserUid,
-                                      );
-                                      if (GetMenuItemCall.ingredientsList(
-                                            (_model.succes?.jsonBody ?? ''),
-                                          ).length >
-                                          0) {
-                                        var historyRecordReference =
-                                            HistoryRecord.createDoc(
-                                                currentUserReference!);
-                                        await historyRecordReference.set({
-                                          ...createHistoryRecordData(
-                                            barcode: valueOrDefault<String>(
-                                              _model.barcodeTextController.text,
-                                              'Product',
-                                            ),
-                                            grade: GetMenuItemCall.grade(
-                                              iconButtonGetMenuItemResponse
-                                                  .jsonBody,
-                                            ).toString(),
-                                          ),
-                                          ...mapToFirestore(
-                                            {
-                                              'date':
-                                                  FieldValue.serverTimestamp(),
-                                            },
-                                          ),
-                                        });
-                                        _model.a1 =
-                                            HistoryRecord.getDocumentFromData({
-                                          ...createHistoryRecordData(
-                                            barcode: valueOrDefault<String>(
-                                              _model.barcodeTextController.text,
-                                              'Product',
-                                            ),
-                                            grade: GetMenuItemCall.grade(
-                                              iconButtonGetMenuItemResponse
-                                                  .jsonBody,
-                                            ).toString(),
-                                          ),
-                                          ...mapToFirestore(
-                                            {
-                                              'date': DateTime.now(),
-                                            },
-                                          ),
-                                        }, historyRecordReference);
-
-                                        context.goNamed(
-                                          'ClassificationPage',
-                                          queryParameters: {
-                                            'barcode': serializeParam(
-                                              _model.barcodeTextController.text,
-                                              ParamType.String,
-                                            ),
-                                          }.withoutNulls,
-                                        );
-                                      } else {
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text('Error'),
-                                              content: Text(
-                                                  'There is no product with this barcode, Try Again.'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
+                                    onPressed: FFAppState().anonimus
+                                        ? null
+                                        : () async {
+                                            currentUserLocationValue =
+                                                await getCurrentUserLocation(
+                                                    defaultLocation:
+                                                        LatLng(0.0, 0.0));
+                                            FFAppState().update(() {
+                                              FFAppState().anonimus = true;
+                                            });
+                                            _model.succes =
+                                                await GetMenuItemCall.call(
+                                              barcodeAPI: _model
+                                                  .barcodeTextController.text,
+                                              latitude: functions.latLongString(
+                                                  currentUserLocationValue!,
+                                                  true),
+                                              longitude:
+                                                  functions.latLongString(
+                                                      currentUserLocationValue!,
+                                                      false),
+                                              uid: currentUserUid,
                                             );
-                                          },
-                                        );
-                                      }
+                                            if ((GetMenuItemCall.data(
+                                                      (_model.succes
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    ) !=
+                                                    null) &&
+                                                (GetMenuItemCall.mess(
+                                                      (_model.succes
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    ).toString() !=
+                                                    'No product found')) {
+                                              var historyRecordReference =
+                                                  HistoryRecord.createDoc(
+                                                      currentUserReference!);
+                                              await historyRecordReference.set({
+                                                ...createHistoryRecordData(
+                                                  barcode:
+                                                      valueOrDefault<String>(
+                                                    _model.barcodeTextController
+                                                        .text,
+                                                    'Product',
+                                                  ),
+                                                  grade: GetMenuItemCall.grade(
+                                                    (_model.succes?.jsonBody ??
+                                                        ''),
+                                                  ).toString(),
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'date': FieldValue
+                                                        .serverTimestamp(),
+                                                  },
+                                                ),
+                                              });
+                                              _model.aa = HistoryRecord
+                                                  .getDocumentFromData({
+                                                ...createHistoryRecordData(
+                                                  barcode:
+                                                      valueOrDefault<String>(
+                                                    _model.barcodeTextController
+                                                        .text,
+                                                    'Product',
+                                                  ),
+                                                  grade: GetMenuItemCall.grade(
+                                                    (_model.succes?.jsonBody ??
+                                                        ''),
+                                                  ).toString(),
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'date': DateTime.now(),
+                                                  },
+                                                ),
+                                              }, historyRecordReference);
 
-                                      setState(() {});
-                                    },
+                                              context.goNamed(
+                                                'ClassificationPage',
+                                                queryParameters: {
+                                                  'barcode': serializeParam(
+                                                    _model.barcodeTextController
+                                                        .text,
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            } else {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Error'),
+                                                    content: Text(
+                                                        'There is no product with this barcode, Try Again.'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                              FFAppState().update(() {
+                                                FFAppState().anonimus = false;
+                                              });
+                                            }
+
+                                            setState(() {});
+                                          },
                                   );
                                 },
                               ),

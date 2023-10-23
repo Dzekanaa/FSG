@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'fsghelp_model.dart';
@@ -25,6 +26,21 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FsghelpModel());
+
+    _model.expandableController1 = ExpandableController(initialExpanded: false);
+    _model.expandableController2 = ExpandableController(initialExpanded: false);
+    _model.expandableController3 = ExpandableController(initialExpanded: false);
+    _model.expandableController4 = ExpandableController(initialExpanded: false);
+    _model.expandableController5 = ExpandableController(initialExpanded: false);
+    _model.expandableController6 = ExpandableController(initialExpanded: false);
+    _model.expandableController7 = ExpandableController(initialExpanded: false);
+    _model.expandableController8 = ExpandableController(initialExpanded: false);
+    _model.expandableController9 = ExpandableController(initialExpanded: false);
+    _model.expandableController10 =
+        ExpandableController(initialExpanded: false);
+    _model.expandableController11 =
+        ExpandableController(initialExpanded: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,6 +52,15 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -92,7 +117,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController1,
                           child: ExpandablePanel(
                             header: Text(
                               'Welcome to FoodScanGenius',
@@ -147,7 +172,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController2,
                           child: ExpandablePanel(
                             header: Text(
                               'Introducing FoodScanGenius',
@@ -202,7 +227,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController3,
                           child: ExpandablePanel(
                             header: Text(
                               'App Features',
@@ -257,7 +282,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController4,
                           child: ExpandablePanel(
                             header: Text(
                               'Target Audience',
@@ -312,7 +337,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController5,
                           child: ExpandablePanel(
                             header: Text(
                               'How to Use the App',
@@ -367,7 +392,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController6,
                           child: ExpandablePanel(
                             header: Text(
                               'Frequently Asked Questions (FAQ)',
@@ -422,7 +447,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController7,
                           child: ExpandablePanel(
                             header: Text(
                               'Affiliate Programs',
@@ -477,7 +502,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController8,
                           child: ExpandablePanel(
                             header: Text(
                               'Terms and Conditions',
@@ -532,7 +557,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController9,
                           child: ExpandablePanel(
                             header: Text(
                               'User Feedback Survey',
@@ -587,7 +612,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController10,
                           child: ExpandablePanel(
                             header: Text(
                               'Legal Considerations',
@@ -642,7 +667,7 @@ class _FsghelpWidgetState extends State<FsghelpWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController11,
                           child: ExpandablePanel(
                             header: Text(
                               'Color Scheme',

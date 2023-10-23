@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/history/scanner_comp/scanner_comp_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_model.dart';
@@ -28,6 +29,8 @@ class _EmptyWidgetState extends State<EmptyWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EmptyModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

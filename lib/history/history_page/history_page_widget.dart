@@ -12,6 +12,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -44,6 +45,7 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
 
     getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => setState(() => currentUserLocationValue = loc));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -55,6 +57,15 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
     if (currentUserLocationValue == null) {
       return Container(
@@ -375,9 +386,12 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
                                                           BorderRadius.circular(
                                                               12.0),
                                                       child: Image.network(
-                                                        GetMenuItemCall.img(
-                                                          imageGetMenuItemResponse
-                                                              .jsonBody,
+                                                        valueOrDefault<String>(
+                                                          GetMenuItemCall.img(
+                                                            imageGetMenuItemResponse
+                                                                .jsonBody,
+                                                          ),
+                                                          'https://www.pacificfoodmachinery.com.au/media/catalog/product/placeholder/default/no-product-image-400x400_8.png',
                                                         ),
                                                         width: 80.0,
                                                         height: 100.0,
@@ -453,23 +467,17 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
                                                             final textGetMenuItemResponse =
                                                                 snapshot.data!;
                                                             return Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                GetMenuItemCall.title(
-                                                                              textGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.title(
-                                                                              textGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            ''
-                                                                    ? 'Product'
-                                                                    : GetMenuItemCall.title(
+                                                              GetMenuItemCall
+                                                                          .title(
                                                                         textGetMenuItemResponse
                                                                             .jsonBody,
-                                                                      ).toString(),
-                                                                'Product',
-                                                              ),
+                                                                      ).toString() ==
+                                                                      'null'
+                                                                  ? 'Product'
+                                                                  : GetMenuItemCall.title(
+                                                                      textGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    ).toString(),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium

@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'preferences_page_model.dart';
@@ -29,6 +30,8 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PreferencesPageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -40,6 +43,15 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -111,8 +123,12 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
                                 8.0, 16.0, 0.0, 0.0),
                             child: Text(
                               'Diet Choices',
-                              style:
-                                  FlutterFlowTheme.of(context).headlineMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    fontFamily: 'Nunito Sans',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
                             ),
                           ),
                         ),
@@ -680,8 +696,12 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
                                 8.0, 16.0, 0.0, 0.0),
                             child: Text(
                               'Religious Restrictions',
-                              style:
-                                  FlutterFlowTheme.of(context).headlineMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    fontFamily: 'Nunito Sans',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
                             ),
                           ),
                         ),
@@ -1137,8 +1157,12 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
                                 8.0, 16.0, 0.0, 0.0),
                             child: Text(
                               'Allergens',
-                              style:
-                                  FlutterFlowTheme.of(context).headlineMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    fontFamily: 'Nunito Sans',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
                             ),
                           ),
                         ),
@@ -2034,8 +2058,12 @@ class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {
                                 8.0, 16.0, 0.0, 0.0),
                             child: Text(
                               'Sustainability choices',
-                              style:
-                                  FlutterFlowTheme.of(context).headlineMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineMedium
+                                  .override(
+                                    fontFamily: 'Nunito Sans',
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                  ),
                             ),
                           ),
                         ),

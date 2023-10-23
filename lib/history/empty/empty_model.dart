@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/history/scanner_comp/scanner_comp_widget.dart';
 import 'empty_widget.dart' show EmptyWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 

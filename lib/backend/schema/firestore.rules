@@ -9,15 +9,10 @@ service cloud.firestore {
     }
 
     match /users/{parent}/history/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow create: if request.auth.uid == parent;
+      allow read: if request.auth.uid == parent;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
     }
-
-    match /{path=**}/history/{document} {
-      allow read: if true;
-    }
-
   }
 }

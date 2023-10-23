@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'contact_page_widget.dart' show ContactPageWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,9 +14,11 @@ class ContactPageModel extends FlutterFlowModel<ContactPageWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for Subject widget.
+  FocusNode? subjectFocusNode;
   TextEditingController? subjectController;
   String? Function(BuildContext, String?)? subjectControllerValidator;
   // State field(s) for Message widget.
+  FocusNode? messageFocusNode;
   TextEditingController? messageController;
   String? Function(BuildContext, String?)? messageControllerValidator;
 
@@ -25,7 +28,10 @@ class ContactPageModel extends FlutterFlowModel<ContactPageWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    subjectFocusNode?.dispose();
     subjectController?.dispose();
+
+    messageFocusNode?.dispose();
     messageController?.dispose();
   }
 

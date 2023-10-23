@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import '../../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -14,7 +14,7 @@ class GetMenuItemCall {
     String? latitude = '0',
     String? longitude = '0',
     String? uid = '0',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'Get Menu item',
       apiUrl:
@@ -280,6 +280,14 @@ class GetMenuItemCall {
   static dynamic serving(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_quantity''',
+      );
+  static dynamic mess(dynamic response) => getJsonField(
+        response,
+        r'''$.data.message''',
+      );
+  static dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
       );
 }
 

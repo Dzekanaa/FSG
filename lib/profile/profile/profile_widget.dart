@@ -6,7 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/help_pages/bottom_popup/bottom_popup_widget.dart';
 import '/history/scanner_comp/scanner_comp_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -30,27 +30,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     super.initState();
     _model = createModel(context, () => ProfileModel());
 
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().anonimus == true) {
-        await showModalBottomSheet(
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          enableDrag: false,
-          context: context,
-          builder: (context) {
-            return Padding(
-              padding: MediaQuery.viewInsetsOf(context),
-              child: ScannerCompWidget(),
-            );
-          },
-        ).then((value) => safeSetState(() {}));
-
-        FFAppState().update(() {
-          FFAppState().anonimus = false;
-        });
-      }
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -62,6 +42,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Scaffold(

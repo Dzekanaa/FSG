@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'about_us_model.dart';
@@ -25,6 +26,13 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AboutUsModel());
+
+    _model.expandableController1 = ExpandableController(initialExpanded: false);
+    _model.expandableController2 = ExpandableController(initialExpanded: false);
+    _model.expandableController3 = ExpandableController(initialExpanded: false);
+    _model.expandableController4 = ExpandableController(initialExpanded: false);
+    _model.expandableController5 = ExpandableController(initialExpanded: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -36,6 +44,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -92,7 +109,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController1,
                           child: ExpandablePanel(
                             header: Text(
                               'Say Goodbye to Ingredient Worries',
@@ -147,7 +164,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController2,
                           child: ExpandablePanel(
                             header: Text(
                               'Simplify Your Grocery Shopping Experience',
@@ -202,7 +219,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController3,
                           child: ExpandablePanel(
                             header: Text(
                               'Dine Out with Confidence',
@@ -257,7 +274,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController4,
                           child: ExpandablePanel(
                             header: Text(
                               'Track Your Nutrition Goals',
@@ -312,7 +329,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                         width: double.infinity,
                         color: Color(0x00000000),
                         child: ExpandableNotifier(
-                          initialExpanded: false,
+                          controller: _model.expandableController5,
                           child: ExpandablePanel(
                             header: Text(
                               'Download FoodScanGenius Today',

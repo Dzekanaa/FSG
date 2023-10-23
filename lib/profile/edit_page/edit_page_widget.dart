@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -31,9 +32,13 @@ class _EditPageWidgetState extends State<EditPageWidget> {
     _model = createModel(context, () => EditPageModel());
 
     _model.emailController ??= TextEditingController(text: currentUserEmail);
+    _model.emailFocusNode ??= FocusNode();
     _model.nameController ??=
         TextEditingController(text: currentUserDisplayName);
+    _model.nameFocusNode ??= FocusNode();
     _model.phoneController ??= TextEditingController(text: currentPhoneNumber);
+    _model.phoneFocusNode ??= FocusNode();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -45,6 +50,15 @@ class _EditPageWidgetState extends State<EditPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Scaffold(
@@ -134,6 +148,7 @@ class _EditPageWidgetState extends State<EditPageWidget> {
                       EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
                   child: TextFormField(
                     controller: _model.emailController,
+                    focusNode: _model.emailFocusNode,
                     textCapitalization: TextCapitalization.words,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -187,6 +202,7 @@ class _EditPageWidgetState extends State<EditPageWidget> {
                   child: AuthUserStreamWidget(
                     builder: (context) => TextFormField(
                       controller: _model.nameController,
+                      focusNode: _model.nameFocusNode,
                       textCapitalization: TextCapitalization.words,
                       obscureText: false,
                       decoration: InputDecoration(
@@ -242,6 +258,7 @@ class _EditPageWidgetState extends State<EditPageWidget> {
                   child: AuthUserStreamWidget(
                     builder: (context) => TextFormField(
                       controller: _model.phoneController,
+                      focusNode: _model.phoneFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Your Phone Number...',

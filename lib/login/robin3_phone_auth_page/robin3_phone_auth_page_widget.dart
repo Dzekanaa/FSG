@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'robin3_phone_auth_page_model.dart';
@@ -28,7 +29,9 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
     _model = createModel(context, () => Robin3PhoneAuthPageModel());
 
     _model.phoneNumberController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
     authManager.handlePhoneAuthStateChanges(context);
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -40,6 +43,15 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -176,6 +188,7 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
                                       0.0, 8.0, 0.0, 8.0),
                                   child: TextFormField(
                                     controller: _model.phoneNumberController,
+                                    focusNode: _model.phoneNumberFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Your Phone Number...',
