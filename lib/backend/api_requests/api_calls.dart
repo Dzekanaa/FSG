@@ -75,10 +75,6 @@ class GetMenuItemCall {
         response,
         r'''$.data.pnns_groups_1''',
       );
-  static dynamic country(dynamic response) => getJsonField(
-        response,
-        r'''$.data.lc''',
-      );
   static dynamic saltlvl(dynamic response) => getJsonField(
         response,
         r'''$.data.nutrient_levels.fat''',
@@ -267,16 +263,6 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments''',
       );
-  static dynamic ingrValue(dynamic response) => getJsonField(
-        response,
-        r'''$.data.ingredients[:].percent_estimate''',
-        true,
-      );
-  static dynamic ingrText(dynamic response) => getJsonField(
-        response,
-        r'''$.data.ingredients[*].id''',
-        true,
-      );
   static dynamic serving(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_quantity''',
@@ -288,6 +274,50 @@ class GetMenuItemCall {
   static dynamic data(dynamic response) => getJsonField(
         response,
         r'''$.data''',
+      );
+  static dynamic ingrValue(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ingredients[?(@.percent_estimate != 0)].percent_estimate''',
+        true,
+      );
+  static dynamic traces(dynamic response) => getJsonField(
+        response,
+        r'''$.data.traces''',
+      );
+  static dynamic stores(dynamic response) => getJsonField(
+        response,
+        r'''$.data.stores''',
+      );
+  static dynamic labels(dynamic response) => getJsonField(
+        response,
+        r'''$.data.labels''',
+      );
+  static dynamic allergen(dynamic response) => getJsonField(
+        response,
+        r'''$.data.allergens''',
+      );
+  static dynamic country(dynamic response) => getJsonField(
+        response,
+        r'''$.data.countries''',
+      );
+  static dynamic pack(dynamic response) => getJsonField(
+        response,
+        r'''$.data.packaging''',
+      );
+  static dynamic ingrText(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ingredients[?(@.percent_estimate != 0)].id''',
+        true,
+      );
+  static dynamic allist(dynamic response) => getJsonField(
+        response,
+        r'''$.data.traces_tags''',
+        true,
+      );
+  static dynamic tralist(dynamic response) => getJsonField(
+        response,
+        r'''$.data.allergens_tags''',
+        true,
       );
 }
 

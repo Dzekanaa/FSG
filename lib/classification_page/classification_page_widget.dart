@@ -5,8 +5,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/history/missing_food/missing_food_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:auto_size_text/auto_size_text.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -137,6 +138,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                   borderRadius: 20.0,
                   borderWidth: 0.0,
                   buttonSize: 40.0,
+                  hoverIconColor: FlutterFlowTheme.of(context).accent3,
                   icon: Icon(
                     Icons.thumb_up_outlined,
                     color: FlutterFlowTheme.of(context).accent1,
@@ -152,6 +154,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                     borderRadius: 20.0,
                     borderWidth: 0.0,
                     buttonSize: 40.0,
+                    hoverIconColor: FlutterFlowTheme.of(context).accent3,
                     icon: Icon(
                       Icons.thumb_down_outlined,
                       color: FlutterFlowTheme.of(context).accent1,
@@ -227,41 +230,30 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                               fit: BoxFit.contain,
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 4.0, 0.0, 0.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 8.0, 0.0, 0.0),
-                                  child: AutoSizeText(
-                                    GetMenuItemCall.title(
-                                              classificationPageGetMenuItemResponse
-                                                  .jsonBody,
-                                            ).toString() ==
-                                            'null'
-                                        ? 'Product'
-                                        : GetMenuItemCall.title(
-                                            classificationPageGetMenuItemResponse
-                                                .jsonBody,
-                                          ).toString().maybeHandleOverflow(
-                                              maxChars: 15,
-                                              replacement: '…',
-                                            ),
-                                    maxLines: 2,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineMedium
-                                        .override(
-                                          fontFamily: 'Nunito Sans',
-                                          fontSize: 22.0,
-                                        ),
-                                    minFontSize: 20.0,
-                                  ),
-                                ),
-                              ],
+                          Flexible(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 0.0, 0.0),
+                              child: Text(
+                                GetMenuItemCall.title(
+                                          classificationPageGetMenuItemResponse
+                                              .jsonBody,
+                                        ).toString() ==
+                                        'null'
+                                    ? 'Product'
+                                    : GetMenuItemCall.title(
+                                        classificationPageGetMenuItemResponse
+                                            .jsonBody,
+                                      ).toString(),
+                                textAlign: TextAlign.start,
+                                maxLines: 5,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: 'Nunito Sans',
+                                      fontSize: 22.0,
+                                    ),
+                              ),
                             ),
                           ),
                         ],
@@ -296,13 +288,13 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                       text: 'Classification',
                                     ),
                                     Tab(
-                                      text: 'Description',
-                                    ),
-                                    Tab(
                                       text: 'Ingredients',
                                     ),
                                     Tab(
                                       text: 'Nutrition',
+                                    ),
+                                    Tab(
+                                      text: 'Description',
                                     ),
                                   ],
                                   controller: _model.tabBarController,
@@ -2767,467 +2759,6 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 700.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16.0),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    32.0, 16.0, 32.0, 16.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Text(
-                                                            'Brand: ',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Nunito Sans',
-                                                                  fontSize:
-                                                                      18.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              GetMenuItemCall
-                                                                  .brand(
-                                                                classificationPageGetMenuItemResponse
-                                                                    .jsonBody,
-                                                              ).toString(),
-                                                              'N / A',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Nunito Sans',
-                                                                  fontSize:
-                                                                      18.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'Country: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .country(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'Weight: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .quantity(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'Energy: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .energy(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .energyUnit(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'KJ',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'Grade: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          GetMenuItemCall.grade(
-                                                                    classificationPageGetMenuItemResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                      .toString() ==
-                                                                  'null'
-                                                              ? 'unknown'
-                                                              : GetMenuItemCall
-                                                                  .grade(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ).toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'EcoGrade: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .ecograde(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          'Category: ',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            GetMenuItemCall
-                                                                .category(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            ).toString(),
-                                                            'N / A',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Nunito Sans',
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Divider(
-                                                      thickness: 1.0,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Divider(
-                                                  thickness: 1.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .accent4,
-                                                ),
-                                              ].divide(SizedBox(height: 12.0)),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      child: Stack(
-                                        children: [
-                                          Opacity(
-                                            opacity: 0.85,
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: double.infinity,
                                                 height: double.infinity,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -3252,105 +2783,139 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height: 292.0,
-                                                    child: Stack(
-                                                      children: [
-                                                        FlutterFlowPieChart(
-                                                          data: FFPieChartData(
-                                                            values: GetMenuItemCall
-                                                                    .ingrValue(
-                                                              classificationPageGetMenuItemResponse
-                                                                  .jsonBody,
-                                                            )!
-                                                                .where((e) =>
-                                                                    e != 0.0)
-                                                                .toList(),
-                                                            colors:
-                                                                chartPieChartColorsList,
-                                                            radius: [125.0],
-                                                          ),
-                                                          donutHoleRadius: 10.0,
-                                                          sectionLabelType:
-                                                              PieChartSectionLabelType
-                                                                  .percent,
-                                                          sectionLabelStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Nunito Sans',
-                                                                    color: Color(
-                                                                        0xFFEBE5EA),
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                        ),
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -1.00, 6.00),
-                                                          child:
-                                                              FlutterFlowChartLegendWidget(
-                                                            entries: functions
-                                                                .skini3char((GetMenuItemCall
-                                                                        .ingrText(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) as List)
-                                                                    .map<String>(
-                                                                        (s) => s
-                                                                            .toString())
-                                                                    .toList()
-                                                                    ?.toList())!
-                                                                .asMap()
-                                                                .entries
-                                                                .map(
-                                                                  (label) =>
-                                                                      LegendEntry(
-                                                                    chartPieChartColorsList[label
-                                                                            .key %
-                                                                        chartPieChartColorsList
-                                                                            .length],
-                                                                    label.value,
-                                                                  ),
-                                                                )
-                                                                .toList(),
-                                                            width:
-                                                                double.infinity,
-                                                            height: 200.0,
-                                                            textStyle:
+                                                  if ((GetMenuItemCall
+                                                              .ingredientsList(
+                                                            classificationPageGetMenuItemResponse
+                                                                .jsonBody,
+                                                          ).length >
+                                                          0) &&
+                                                      (GetMenuItemCall
+                                                              .ingrValue(
+                                                            classificationPageGetMenuItemResponse
+                                                                .jsonBody,
+                                                          ).contains(
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            kBreakpointSmall,
+                                                            0.0,
+                                                          )) ==
+                                                          false))
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height: 292.0,
+                                                      child: Stack(
+                                                        children: [
+                                                          FlutterFlowPieChart(
+                                                            data:
+                                                                FFPieChartData(
+                                                              values: GetMenuItemCall
+                                                                          .ingredientsList(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ).length >
+                                                                      0
+                                                                  ? GetMenuItemCall
+                                                                      .ingrValue(
+                                                                      classificationPageGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    )!
+                                                                  : List.generate(
+                                                                      random_data
+                                                                          .randomInteger(
+                                                                              0,
+                                                                              0),
+                                                                      (index) =>
+                                                                          random_data.randomDouble(
+                                                                              0.0,
+                                                                              1.0)),
+                                                              colors:
+                                                                  chartPieChartColorsList,
+                                                              radius: [125.0],
+                                                            ),
+                                                            donutHoleRadius:
+                                                                10.0,
+                                                            sectionLabelType:
+                                                                PieChartSectionLabelType
+                                                                    .percent,
+                                                            sectionLabelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
+                                                                    .labelMedium
                                                                     .override(
                                                                       fontFamily:
                                                                           'Nunito Sans',
+                                                                      color: Color(
+                                                                          0xFFEBE5EA),
                                                                       fontSize:
                                                                           12.0,
                                                                     ),
-                                                            textPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            borderWidth: 0.0,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            borderColor: Colors
-                                                                .transparent,
-                                                            indicatorSize: 10.0,
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.00,
+                                                                    6.00),
+                                                            child:
+                                                                FlutterFlowChartLegendWidget(
+                                                              entries: functions
+                                                                  .skini3char((GetMenuItemCall
+                                                                          .ingrText(
+                                                                    classificationPageGetMenuItemResponse
+                                                                        .jsonBody,
+                                                                  ) as List)
+                                                                      .map<String>(
+                                                                          (s) =>
+                                                                              s.toString())
+                                                                      .toList()
+                                                                      ?.toList())!
+                                                                  .asMap()
+                                                                  .entries
+                                                                  .map(
+                                                                    (label) =>
+                                                                        LegendEntry(
+                                                                      chartPieChartColorsList[label
+                                                                              .key %
+                                                                          chartPieChartColorsList
+                                                                              .length],
+                                                                      label
+                                                                          .value,
+                                                                    ),
+                                                                  )
+                                                                  .toList(),
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 200.0,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Nunito Sans',
+                                                                        fontSize:
+                                                                            12.0,
+                                                                      ),
+                                                              textPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              borderWidth: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              borderColor: Colors
+                                                                  .transparent,
+                                                              indicatorSize:
+                                                                  10.0,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -3377,6 +2942,17 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                               ),
                                             ),
                                           ),
+                                          if (GetMenuItemCall.ingredientsList(
+                                                classificationPageGetMenuItemResponse
+                                                    .jsonBody,
+                                              ).length ==
+                                              0)
+                                            wrapWithModel(
+                                              model: _model.missingFoodModel,
+                                              updateCallback: () =>
+                                                  setState(() {}),
+                                              child: MissingFoodWidget(),
+                                            ),
                                         ],
                                       ),
                                     ),
@@ -4717,6 +4293,830 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                         ),
                                       ),
                                     ),
+                                    Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      child: Stack(
+                                        children: [
+                                          Opacity(
+                                            opacity: 0.85,
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 700.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    32.0, 16.0, 32.0, 16.0),
+                                            child: SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Text(
+                                                              'Brand: ',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .brand(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Country: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .country(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ).maybeHandleOverflow(
+                                                                  maxChars: 30),
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Weight: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              GetMenuItemCall
+                                                                  .quantity(
+                                                                classificationPageGetMenuItemResponse
+                                                                    .jsonBody,
+                                                              ).toString(),
+                                                              'N / A',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Energy: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            GetMenuItemCall
+                                                                        .energy(
+                                                                      classificationPageGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    ) ==
+                                                                    null
+                                                                ? 'N / A '
+                                                                : GetMenuItemCall
+                                                                    .energy(
+                                                                    classificationPageGetMenuItemResponse
+                                                                        .jsonBody,
+                                                                  ).toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              GetMenuItemCall
+                                                                  .energyUnit(
+                                                                classificationPageGetMenuItemResponse
+                                                                    .jsonBody,
+                                                              ).toString(),
+                                                              'KJ',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Grade: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            GetMenuItemCall
+                                                                            .grade(
+                                                                      classificationPageGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                        .toString() ==
+                                                                    'null'
+                                                                ? 'unknown'
+                                                                : GetMenuItemCall
+                                                                    .grade(
+                                                                    classificationPageGetMenuItemResponse
+                                                                        .jsonBody,
+                                                                  ).toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'EcoGrade: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .ecograde(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Category: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .category(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Packing: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .pack(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Labels: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .labels(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            'Stores: ',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Nunito Sans',
+                                                                  fontSize:
+                                                                      18.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                GetMenuItemCall
+                                                                    .stores(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ).toString(),
+                                                                'N / A',
+                                                              ),
+                                                              maxLines: 2,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.00,
+                                                                    -1.00),
+                                                            child: Text(
+                                                              'Traces: ',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.00,
+                                                                      0.00),
+                                                              child: Text(
+                                                                GetMenuItemCall
+                                                                            .traces(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ).toString() ==
+                                                                        'null'
+                                                                    ? 'no traces'
+                                                                    : functions.spoji(functions
+                                                                        .skini3char((GetMenuItemCall.tralist(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) as List)
+                                                                            .map<String>((s) => s.toString())
+                                                                            .toList()
+                                                                            ?.map((e) => e.toString())
+                                                                            .toList()
+                                                                            ?.toList())
+                                                                        ?.toList())!,
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Nunito Sans',
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    0.00,
+                                                                    -1.00),
+                                                            child: Text(
+                                                              'Allergens: ',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Nunito Sans',
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.00,
+                                                                      0.00),
+                                                              child: Text(
+                                                                GetMenuItemCall
+                                                                            .allergen(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ).toString() ==
+                                                                        'null'
+                                                                    ? 'no allergens'
+                                                                    : functions.spoji(functions
+                                                                        .skini3char((GetMenuItemCall.allist(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) as List)
+                                                                            .map<String>((s) => s.toString())
+                                                                            .toList()
+                                                                            ?.map((e) => e.toString())
+                                                                            .toList()
+                                                                            ?.toList())
+                                                                        ?.toList())!,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Nunito Sans',
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        thickness: 1.0,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ].divide(
+                                                    SizedBox(height: 12.0)),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -4725,9 +5125,13 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                         ),
                       ),
                       if (GetMenuItemCall.serving(
-                            classificationPageGetMenuItemResponse.jsonBody,
-                          ) !=
-                          null)
+                                classificationPageGetMenuItemResponse.jsonBody,
+                              ).toString() !=
+                              null &&
+                          GetMenuItemCall.serving(
+                                classificationPageGetMenuItemResponse.jsonBody,
+                              ).toString() !=
+                              '')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 16.0),

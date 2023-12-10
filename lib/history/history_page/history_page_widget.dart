@@ -343,62 +343,20 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 1.0, 1.0, 1.0),
-                                                child: FutureBuilder<
-                                                    ApiCallResponse>(
-                                                  future: GetMenuItemCall.call(
-                                                    barcodeAPI:
-                                                        listViewHistoryRecord
-                                                            .barcode,
-                                                    latitude:
-                                                        functions.latLongString(
-                                                            currentUserLocationValue!,
-                                                            true),
-                                                    longitude:
-                                                        functions.latLongString(
-                                                            currentUserLocationValue!,
-                                                            false),
-                                                    uid: currentUserUid,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                  child: Image.network(
+                                                    valueOrDefault<String>(
+                                                      listViewHistoryRecord
+                                                          .image,
+                                                      'https://www.pacificfoodmachinery.com.au/media/catalog/product/placeholder/default/no-product-image-400x400_8.png',
+                                                    ),
+                                                    width: 80.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.contain,
                                                   ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child: SizedBox(
-                                                          width: 50.0,
-                                                          height: 50.0,
-                                                          child:
-                                                              CircularProgressIndicator(
-                                                            valueColor:
-                                                                AlwaysStoppedAnimation<
-                                                                    Color>(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primary,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }
-                                                    final imageGetMenuItemResponse =
-                                                        snapshot.data!;
-                                                    return ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                      child: Image.network(
-                                                        valueOrDefault<String>(
-                                                          GetMenuItemCall.img(
-                                                            imageGetMenuItemResponse
-                                                                .jsonBody,
-                                                          ),
-                                                          'https://www.pacificfoodmachinery.com.au/media/catalog/product/placeholder/default/no-product-image-400x400_8.png',
-                                                        ),
-                                                        width: 80.0,
-                                                        height: 100.0,
-                                                        fit: BoxFit.contain,
-                                                      ),
-                                                    );
-                                                  },
                                                 ),
                                               ),
                                               Expanded(
@@ -424,74 +382,24 @@ class _HistoryPageWidgetState extends State<HistoryPageWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     5.0),
-                                                        child: FutureBuilder<
-                                                            ApiCallResponse>(
-                                                          future:
-                                                              GetMenuItemCall
-                                                                  .call(
-                                                            barcodeAPI:
-                                                                listViewHistoryRecord
-                                                                    .barcode,
-                                                            latitude: functions
-                                                                .latLongString(
-                                                                    currentUserLocationValue!,
-                                                                    true),
-                                                            longitude: functions
-                                                                .latLongString(
-                                                                    currentUserLocationValue!,
-                                                                    false),
-                                                            uid: currentUserUid,
-                                                          ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            final textGetMenuItemResponse =
-                                                                snapshot.data!;
-                                                            return Text(
-                                                              GetMenuItemCall
-                                                                          .title(
-                                                                        textGetMenuItemResponse
-                                                                            .jsonBody,
-                                                                      ).toString() ==
-                                                                      'null'
-                                                                  ? 'Product'
-                                                                  : GetMenuItemCall.title(
-                                                                      textGetMenuItemResponse
-                                                                          .jsonBody,
-                                                                    ).toString(),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Nunito Sans',
-                                                                    fontSize:
-                                                                        20.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            );
-                                                          },
+                                                        child: Text(
+                                                          listViewHistoryRecord
+                                                                      .text ==
+                                                                  'null'
+                                                              ? 'Product'
+                                                              : listViewHistoryRecord
+                                                                  .text,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Nunito Sans',
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
                                                         ),
                                                       ),
                                                       Padding(

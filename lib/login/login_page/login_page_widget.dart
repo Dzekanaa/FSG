@@ -37,14 +37,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
     )..addListener(() => setState(() {}));
     _model.emailAddressLoginController ??= TextEditingController();
     _model.emailAddressLoginFocusNode ??= FocusNode();
+
     _model.passwordLoginController ??= TextEditingController();
     _model.passwordLoginFocusNode ??= FocusNode();
+
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
+
     _model.passwordController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
     _model.passwordConfirmController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

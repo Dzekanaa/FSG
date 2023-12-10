@@ -30,6 +30,7 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
 
     _model.phoneNumberController ??= TextEditingController();
     _model.phoneNumberFocusNode ??= FocusNode();
+
     authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

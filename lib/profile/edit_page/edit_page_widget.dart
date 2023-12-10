@@ -33,11 +33,14 @@ class _EditPageWidgetState extends State<EditPageWidget> {
 
     _model.emailController ??= TextEditingController(text: currentUserEmail);
     _model.emailFocusNode ??= FocusNode();
+
     _model.nameController ??=
         TextEditingController(text: currentUserDisplayName);
     _model.nameFocusNode ??= FocusNode();
+
     _model.phoneController ??= TextEditingController(text: currentPhoneNumber);
     _model.phoneFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

@@ -1,12 +1,7 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -28,8 +23,6 @@ class ScannerCompWidget extends StatefulWidget {
 class _ScannerCompWidgetState extends State<ScannerCompWidget> {
   late ScannerCompModel _model;
 
-  LatLng? currentUserLocationValue;
-
   @override
   void setState(VoidCallback callback) {
     super.setState(callback);
@@ -48,13 +41,10 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
       });
     });
 
-    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
-        .then((loc) => setState(() => currentUserLocationValue = loc));
     _model.barcodeTextController ??= TextEditingController();
     _model.barcodeTextFocusNode ??= FocusNode();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.barcodeTextController?.text = 'BarCode';
-        }));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -67,22 +57,6 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    if (currentUserLocationValue == null) {
-      return Container(
-        color: FlutterFlowTheme.of(context).primaryBackground,
-        child: Center(
-          child: SizedBox(
-            width: 50.0,
-            height: 50.0,
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                FlutterFlowTheme.of(context).primary,
-              ),
-            ),
-          ),
-        ),
-      );
-    }
 
     return Container(
       width: double.infinity,
@@ -160,73 +134,47 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                             ),
                           ),
                         ),
-                        FutureBuilder<ApiCallResponse>(
-                          future: GetMenuItemCall.call(
-                            barcodeAPI: _model.barcodeTextController.text,
-                            latitude: functions.latLongString(
-                                currentUserLocationValue!, true),
-                            longitude: functions.latLongString(
-                                currentUserLocationValue!, false),
-                            uid: currentUserUid,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final buttonGetMenuItemResponse = snapshot.data!;
-                            return FFButtonWidget(
-                              onPressed: () async {
-                                _model.barcode =
-                                    await FlutterBarcodeScanner.scanBarcode(
-                                  '#C62828', // scanning line color
-                                  'Cancel', // cancel button text
-                                  true, // whether to show the flash icon
-                                  ScanMode.QR,
-                                );
-
-                                setState(() {
-                                  _model.barcodeTextController?.text =
-                                      _model.barcode!;
-                                });
-
-                                setState(() {});
-                              },
-                              text: 'Scan Now',
-                              options: FFButtonOptions(
-                                width: 215.0,
-                                height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).accent1,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Nunito Sans',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                elevation: 6.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            _model.barcode =
+                                await FlutterBarcodeScanner.scanBarcode(
+                              '#C62828', // scanning line color
+                              'Cancel', // cancel button text
+                              true, // whether to show the flash icon
+                              ScanMode.QR,
                             );
+
+                            setState(() {
+                              _model.barcodeTextController?.text =
+                                  _model.barcode!;
+                            });
+                            await _model.funk(context);
+
+                            setState(() {});
                           },
+                          text: 'Scan Now',
+                          options: FFButtonOptions(
+                            width: 215.0,
+                            height: 50.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).accent1,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Nunito Sans',
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                            elevation: 6.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -394,167 +342,27 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                   ),
                                 ),
                               ),
-                              FutureBuilder<ApiCallResponse>(
-                                future: GetMenuItemCall.call(
-                                  barcodeAPI: _model.barcodeTextController.text,
-                                  latitude: functions.latLongString(
-                                      currentUserLocationValue!, true),
-                                  longitude: functions.latLongString(
-                                      currentUserLocationValue!, false),
-                                  uid: currentUserUid,
+                              FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                borderRadius: 50.0,
+                                borderWidth: 1.0,
+                                buttonSize: 60.0,
+                                fillColor: FlutterFlowTheme.of(context).accent1,
+                                disabledColor:
+                                    FlutterFlowTheme.of(context).accent3,
+                                icon: Icon(
+                                  Icons.chevron_right_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  size: 24.0,
                                 ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                  final iconButtonGetMenuItemResponse =
-                                      snapshot.data!;
-                                  return FlutterFlowIconButton(
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    borderRadius: 50.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).accent1,
-                                    disabledColor:
-                                        FlutterFlowTheme.of(context).accent3,
-                                    icon: Icon(
-                                      Icons.chevron_right_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: FFAppState().anonimus
-                                        ? null
-                                        : () async {
-                                            currentUserLocationValue =
-                                                await getCurrentUserLocation(
-                                                    defaultLocation:
-                                                        LatLng(0.0, 0.0));
-                                            FFAppState().update(() {
-                                              FFAppState().anonimus = true;
-                                            });
-                                            _model.succes =
-                                                await GetMenuItemCall.call(
-                                              barcodeAPI: _model
-                                                  .barcodeTextController.text,
-                                              latitude: functions.latLongString(
-                                                  currentUserLocationValue!,
-                                                  true),
-                                              longitude:
-                                                  functions.latLongString(
-                                                      currentUserLocationValue!,
-                                                      false),
-                                              uid: currentUserUid,
-                                            );
-                                            if ((GetMenuItemCall.data(
-                                                      (_model.succes
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    ) !=
-                                                    null) &&
-                                                (GetMenuItemCall.mess(
-                                                      (_model.succes
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    ).toString() !=
-                                                    'No product found')) {
-                                              var historyRecordReference =
-                                                  HistoryRecord.createDoc(
-                                                      currentUserReference!);
-                                              await historyRecordReference.set({
-                                                ...createHistoryRecordData(
-                                                  barcode:
-                                                      valueOrDefault<String>(
-                                                    _model.barcodeTextController
-                                                        .text,
-                                                    'Product',
-                                                  ),
-                                                  grade: GetMenuItemCall.grade(
-                                                    (_model.succes?.jsonBody ??
-                                                        ''),
-                                                  ).toString(),
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'date': FieldValue
-                                                        .serverTimestamp(),
-                                                  },
-                                                ),
-                                              });
-                                              _model.aa = HistoryRecord
-                                                  .getDocumentFromData({
-                                                ...createHistoryRecordData(
-                                                  barcode:
-                                                      valueOrDefault<String>(
-                                                    _model.barcodeTextController
-                                                        .text,
-                                                    'Product',
-                                                  ),
-                                                  grade: GetMenuItemCall.grade(
-                                                    (_model.succes?.jsonBody ??
-                                                        ''),
-                                                  ).toString(),
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'date': DateTime.now(),
-                                                  },
-                                                ),
-                                              }, historyRecordReference);
-
-                                              context.goNamed(
-                                                'ClassificationPage',
-                                                queryParameters: {
-                                                  'barcode': serializeParam(
-                                                    _model.barcodeTextController
-                                                        .text,
-                                                    ParamType.String,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            } else {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text('Error'),
-                                                    content: Text(
-                                                        'There is no product with this barcode, Try Again.'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                              FFAppState().update(() {
-                                                FFAppState().anonimus = false;
-                                              });
-                                            }
-
-                                            setState(() {});
-                                          },
-                                  );
-                                },
+                                showLoadingIndicator: true,
+                                onPressed: FFAppState().anonimus
+                                    ? null
+                                    : () async {
+                                        await _model.funk(context);
+                                      },
                               ),
                             ],
                           ),

@@ -29,8 +29,10 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
 
     _model.subjectController ??= TextEditingController();
     _model.subjectFocusNode ??= FocusNode();
+
     _model.messageController ??= TextEditingController();
     _model.messageFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

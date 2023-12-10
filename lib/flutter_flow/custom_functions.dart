@@ -38,3 +38,9 @@ List<String>? skini3char(List<String>? inputList) {
 
   return outputList;
 }
+
+String? spoji(List<String>? lista) {
+  String? concatenatedString = lista?.join(", ");
+
+  return concatenatedString;
+}

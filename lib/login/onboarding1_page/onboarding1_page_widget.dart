@@ -219,6 +219,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setDarkModeSetting(context, ThemeMode.dark);
       if (FFAppState().firsttime) {
         setState(() {
           FFAppState().firsttime = false;
@@ -321,13 +322,14 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Welcome to FSG',
+                                              'Food Scanner Genius',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .displaySmall
                                                   .override(
                                                     fontFamily: 'Nunito Sans',
+                                                    fontSize: 36.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ).animateOnPageLoad(animationsMap[
@@ -337,7 +339,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'I have some great food options here!! Yum yum!!',
+                                                'Empower allergen and diet-sensitive consumers to make informed choices',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -357,7 +359,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Awesome Recipes',
+                                              'Barcode Scanner',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -373,7 +375,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'I have some great food options here!! Yum yum!!',
+                                                'Instant Allergen and Dietary Compatibility Check',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -393,7 +395,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Personalized recipe discovery',
+                                              'Covering All Your Needs',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -409,7 +411,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'I have some great food options here!! Yum yum!!',
+                                                'Extensive Allergen Database',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)

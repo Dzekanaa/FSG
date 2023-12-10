@@ -31,12 +31,24 @@ class HistoryRecord extends FirestoreRecord {
   String get grade => _grade ?? '';
   bool hasGrade() => _grade != null;
 
+  // "text" field.
+  String? _text;
+  String get text => _text ?? '';
+  bool hasText() => _text != null;
+
+  // "image" field.
+  String? _image;
+  String get image => _image ?? '';
+  bool hasImage() => _image != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _barcode = snapshotData['barcode'] as String?;
     _date = snapshotData['date'] as DateTime?;
     _grade = snapshotData['grade'] as String?;
+    _text = snapshotData['text'] as String?;
+    _image = snapshotData['image'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -82,12 +94,16 @@ Map<String, dynamic> createHistoryRecordData({
   String? barcode,
   DateTime? date,
   String? grade,
+  String? text,
+  String? image,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'barcode': barcode,
       'date': date,
       'grade': grade,
+      'text': text,
+      'image': image,
     }.withoutNulls,
   );
 
@@ -101,12 +117,14 @@ class HistoryRecordDocumentEquality implements Equality<HistoryRecord> {
   bool equals(HistoryRecord? e1, HistoryRecord? e2) {
     return e1?.barcode == e2?.barcode &&
         e1?.date == e2?.date &&
-        e1?.grade == e2?.grade;
+        e1?.grade == e2?.grade &&
+        e1?.text == e2?.text &&
+        e1?.image == e2?.image;
   }
 
   @override
-  int hash(HistoryRecord? e) =>
-      const ListEquality().hash([e?.barcode, e?.date, e?.grade]);
+  int hash(HistoryRecord? e) => const ListEquality()
+      .hash([e?.barcode, e?.date, e?.grade, e?.text, e?.image]);
 
   @override
   bool isValidKey(Object? o) => o is HistoryRecord;

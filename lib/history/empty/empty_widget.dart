@@ -49,7 +49,7 @@ class _EmptyWidgetState extends State<EmptyWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          Icons.fastfood_outlined,
+          Icons.no_food_outlined,
           color: FlutterFlowTheme.of(context).primaryText,
           size: 90.0,
         ),
