@@ -132,8 +132,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          2.0, 2.0, 2.0, 2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(10.0),
@@ -263,16 +262,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   ],
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
-                                alignment: AlignmentDirectional(0.00, 0.00),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 8.0, 8.0, 8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            2.0, 2.0, 2.0, 2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: Icon(
                                           Icons.fastfood_rounded,
                                           color: FlutterFlowTheme.of(context)
@@ -298,7 +295,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.90, 0.00),
+                                              AlignmentDirectional(0.9, 0.0),
                                           child: Icon(
                                             Icons.arrow_forward_ios,
                                             color: FlutterFlowTheme.of(context)
@@ -362,14 +359,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 8.0, 8.0, 8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            2.0, 2.0, 2.0, 2.0),
+                                        padding: EdgeInsets.all(2.0),
                                         child: Icon(
                                           Icons.person,
                                           color: FlutterFlowTheme.of(context)
@@ -389,7 +384,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0.90, 0.00),
+                                              AlignmentDirectional(0.9, 0.0),
                                           child: Icon(
                                             Icons.arrow_forward_ios,
                                             color: FlutterFlowTheme.of(context)
@@ -517,7 +512,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.95, 0.00),
+                                                              0.95, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -538,7 +533,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              -0.85, 0.00),
+                                                              -0.85, 0.0),
                                                       child: Container(
                                                         width: 36.0,
                                                         height: 36.0,
@@ -626,7 +621,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              -0.90, 0.00),
+                                                              -0.9, 0.0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -648,7 +643,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.90, 0.00),
+                                                              0.9, 0.0),
                                                       child: Container(
                                                         width: 36.0,
                                                         height: 36.0,
@@ -702,7 +697,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                 ),
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: Row(
@@ -791,7 +786,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             ],
           ),
           Align(
-            alignment: AlignmentDirectional(0.00, 0.87),
+            alignment: AlignmentDirectional(0.0, 0.87),
             child: FlutterFlowIconButton(
               borderColor: FlutterFlowTheme.of(context).secondaryBackground,
               borderRadius: 20.0,

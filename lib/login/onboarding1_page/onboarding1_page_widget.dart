@@ -272,7 +272,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
             ),
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.00, 1.00),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
@@ -280,7 +280,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                 alignment: AlignmentDirectional(0.0, 1.0),
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.00, 1.00),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Container(
                       width: double.infinity,
                       height: 400.0,
@@ -426,7 +426,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, 1.00),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
@@ -622,11 +622,11 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.00, 0.00),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Transform.rotate(
                       angle: 0.8901,
                       child: Align(
-                        alignment: AlignmentDirectional(-2.20, -0.39),
+                        alignment: AlignmentDirectional(-2.2, -0.39),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(

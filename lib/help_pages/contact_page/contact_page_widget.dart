@@ -210,8 +210,7 @@ class _ContactPageWidgetState extends State<ContactPageWidget> {
                         ),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      contentPadding: EdgeInsetsDirectional.fromSTEB(
-                          10.0, 10.0, 10.0, 10.0),
+                      contentPadding: EdgeInsets.all(10.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium,
                     textAlign: TextAlign.justify,

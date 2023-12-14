@@ -152,7 +152,12 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
                               fieldHeight: 60.0,
                               fieldWidth: 60.0,
                               borderWidth: 2.0,
-                              borderRadius: BorderRadius.circular(12.0),
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(12.0),
+                                bottomRight: Radius.circular(12.0),
+                                topLeft: Radius.circular(12.0),
+                                topRight: Radius.circular(12.0),
+                              ),
                               shape: PinCodeFieldShape.box,
                               activeColor: FlutterFlowTheme.of(context).primary,
                               inactiveColor:
@@ -207,8 +212,7 @@ class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {
                       options: FFButtonOptions(
                         width: 336.0,
                         height: 50.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                        padding: EdgeInsets.all(8.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).accent1,

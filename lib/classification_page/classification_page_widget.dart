@@ -186,8 +186,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                   ),
                 ),
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -198,7 +197,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Text(
                                 'barcode: ',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -281,8 +280,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                   unselectedLabelStyle: TextStyle(),
                                   indicatorColor:
                                       FlutterFlowTheme.of(context).accent1,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 2.0, 2.0, 2.0),
+                                  padding: EdgeInsets.all(2.0),
                                   tabs: [
                                     Tab(
                                       text: 'Classification',
@@ -363,8 +361,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        -1.00,
-                                                                        0.00),
+                                                                        -1.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -402,14 +400,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.vegan(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.vegan(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .vegan(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -526,14 +522,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.ovovege(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.ovovege(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .ovovege(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -653,14 +647,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.pesca(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.pesca(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .pesca(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -777,14 +769,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.whitemeat(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.whitemeat(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .whitemeat(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -906,8 +896,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        -1.00,
-                                                                        0.00),
+                                                                        -1.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -1322,8 +1312,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        -1.00,
-                                                                        0.00),
+                                                                        -1.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -1609,14 +1599,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alsulphur(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alsulphur(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alsulphur(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -1758,8 +1746,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        -1.00,
-                                                                        0.00),
+                                                                        -1.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -1797,14 +1785,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alcelery(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alcelery(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alcelery(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -1921,14 +1907,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alcereals(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alcereals(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alcereals(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -2045,14 +2029,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.aleggs(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.aleggs(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .aleggs(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -2169,14 +2151,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alfish(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alfish(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alfish(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -2417,14 +2397,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alnuts(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alnuts(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alnuts(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -2541,14 +2519,12 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       'Not Interesed') &&
                                                                   valueOrDefault<
                                                                       bool>(
-                                                                    GetMenuItemCall.alsesame(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            null &&
-                                                                        GetMenuItemCall.alsesame(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
-                                                                            '',
+                                                                    GetMenuItemCall
+                                                                            .alsesame(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null,
                                                                     false,
                                                                   ),
                                                               false,
@@ -2783,161 +2759,132 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  if ((GetMenuItemCall
+                                                  if (GetMenuItemCall
                                                               .ingredientsList(
-                                                            classificationPageGetMenuItemResponse
-                                                                .jsonBody,
-                                                          ).length >
-                                                          0) &&
-                                                      (GetMenuItemCall
-                                                              .ingrValue(
-                                                            classificationPageGetMenuItemResponse
-                                                                .jsonBody,
-                                                          ).contains(
-                                                              valueOrDefault<
-                                                                  double>(
-                                                            kBreakpointSmall,
-                                                            0.0,
-                                                          )) ==
-                                                          false))
-                                                    Container(
-                                                      width: double.infinity,
-                                                      height: 292.0,
-                                                      child: Stack(
-                                                        children: [
-                                                          FlutterFlowPieChart(
-                                                            data:
-                                                                FFPieChartData(
-                                                              values: GetMenuItemCall
-                                                                          .ingredientsList(
+                                                        classificationPageGetMenuItemResponse
+                                                            .jsonBody,
+                                                      )!
+                                                          .length >
+                                                      0)
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  200.0),
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 292.0,
+                                                        child: Stack(
+                                                          children: [
+                                                            FlutterFlowPieChart(
+                                                              data:
+                                                                  FFPieChartData(
+                                                                values: GetMenuItemCall
+                                                                                .ingrValue(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        )!
+                                                                            .length >
+                                                                        0
+                                                                    ? GetMenuItemCall
+                                                                        .ingrValue(
                                                                         classificationPageGetMenuItemResponse
                                                                             .jsonBody,
-                                                                      ).length >
-                                                                      0
-                                                                  ? GetMenuItemCall
-                                                                      .ingrValue(
-                                                                      classificationPageGetMenuItemResponse
-                                                                          .jsonBody,
-                                                                    )!
-                                                                  : List.generate(
-                                                                      random_data
-                                                                          .randomInteger(
-                                                                              0,
-                                                                              0),
-                                                                      (index) =>
-                                                                          random_data.randomDouble(
-                                                                              0.0,
-                                                                              1.0)),
-                                                              colors:
-                                                                  chartPieChartColorsList,
-                                                              radius: [125.0],
-                                                            ),
-                                                            donutHoleRadius:
-                                                                10.0,
-                                                            sectionLabelType:
-                                                                PieChartSectionLabelType
-                                                                    .percent,
-                                                            sectionLabelStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Nunito Sans',
-                                                                      color: Color(
-                                                                          0xFFEBE5EA),
-                                                                      fontSize:
-                                                                          12.0,
-                                                                    ),
-                                                          ),
-                                                          Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    -1.00,
-                                                                    6.00),
-                                                            child:
-                                                                FlutterFlowChartLegendWidget(
-                                                              entries: functions
-                                                                  .skini3char((GetMenuItemCall
-                                                                          .ingrText(
-                                                                    classificationPageGetMenuItemResponse
-                                                                        .jsonBody,
-                                                                  ) as List)
-                                                                      .map<String>(
-                                                                          (s) =>
-                                                                              s.toString())
-                                                                      .toList()
-                                                                      ?.toList())!
-                                                                  .asMap()
-                                                                  .entries
-                                                                  .map(
-                                                                    (label) =>
-                                                                        LegendEntry(
-                                                                      chartPieChartColorsList[label
-                                                                              .key %
-                                                                          chartPieChartColorsList
-                                                                              .length],
-                                                                      label
-                                                                          .value,
-                                                                    ),
-                                                                  )
-                                                                  .toList(),
-                                                              width: double
-                                                                  .infinity,
-                                                              height: 200.0,
-                                                              textStyle:
+                                                                      )!
+                                                                    : List.generate(
+                                                                        random_data.randomInteger(
+                                                                            0,
+                                                                            0),
+                                                                        (index) => random_data.randomDouble(
+                                                                            0.0,
+                                                                            1.0)),
+                                                                colors:
+                                                                    chartPieChartColorsList,
+                                                                radius: [125.0],
+                                                              ),
+                                                              donutHoleRadius:
+                                                                  10.0,
+                                                              sectionLabelType:
+                                                                  PieChartSectionLabelType
+                                                                      .percent,
+                                                              sectionLabelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
+                                                                      .labelMedium
                                                                       .override(
                                                                         fontFamily:
                                                                             'Nunito Sans',
+                                                                        color: Color(
+                                                                            0xFFEBE5EA),
                                                                         fontSize:
                                                                             12.0,
                                                                       ),
-                                                              textPadding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              borderWidth: 0.0,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                              borderColor: Colors
-                                                                  .transparent,
-                                                              indicatorSize:
-                                                                  10.0,
                                                             ),
-                                                          ),
-                                                        ],
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.0,
+                                                                      6.0),
+                                                              child:
+                                                                  FlutterFlowChartLegendWidget(
+                                                                entries: functions
+                                                                    .skini3char((GetMenuItemCall.ingrText(
+                                                                      classificationPageGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    ) as List)
+                                                                        .map<String>((s) => s.toString())
+                                                                        .toList()
+                                                                        ?.toList())!
+                                                                    .asMap()
+                                                                    .entries
+                                                                    .map(
+                                                                      (label) =>
+                                                                          LegendEntry(
+                                                                        chartPieChartColorsList[label.key %
+                                                                            chartPieChartColorsList.length],
+                                                                        label
+                                                                            .value,
+                                                                      ),
+                                                                    )
+                                                                    .toList(),
+                                                                width: double
+                                                                    .infinity,
+                                                                height: 200.0,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Nunito Sans',
+                                                                      fontSize:
+                                                                          12.0,
+                                                                    ),
+                                                                textPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                borderWidth:
+                                                                    0.0,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                borderColor: Colors
+                                                                    .transparent,
+                                                                indicatorSize:
+                                                                    10.0,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0.0,
-                                                                250.0,
-                                                                0.0,
-                                                                0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        if (false)
-                                                          Text(
-                                                            'Hello World',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium,
-                                                          ),
-                                                      ],
-                                                    ),
-                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -2945,7 +2892,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                           if (GetMenuItemCall.ingredientsList(
                                                 classificationPageGetMenuItemResponse
                                                     .jsonBody,
-                                              ).length ==
+                                              )?.length ==
                                               0)
                                             wrapWithModel(
                                               model: _model.missingFoodModel,
@@ -2960,7 +2907,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                       opacity: 0.85,
                                       child: Align(
                                         alignment:
-                                            AlignmentDirectional(0.00, 0.00),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -2976,15 +2923,13 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                   BorderRadius.circular(16.0),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 16.0, 16.0, 16.0),
+                                              padding: EdgeInsets.all(16.0),
                                               child: Stack(
                                                 children: [
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.00, -1.00),
+                                                            0.0, -1.0),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -3094,11 +3039,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3207,11 +3149,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3320,11 +3259,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3433,11 +3369,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3546,11 +3479,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3658,11 +3588,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3771,11 +3698,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3884,11 +3808,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -3997,11 +3918,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -4110,11 +4028,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -4220,11 +4135,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            4.0,
-                                                                            4.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             4.0),
                                                                     child:
                                                                         Column(
@@ -4957,8 +4869,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.00,
-                                                                    -1.00),
+                                                                    -1.0, -1.0),
                                                             child: Text(
                                                               'Traces: ',
                                                               style: FlutterFlowTheme
@@ -4979,8 +4890,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                             child: Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.00,
-                                                                      0.00),
+                                                                      -1.0,
+                                                                      0.0),
                                                               child: Text(
                                                                 GetMenuItemCall
                                                                             .traces(
@@ -5040,8 +4951,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.00,
-                                                                    -1.00),
+                                                                    0.0, -1.0),
                                                             child: Text(
                                                               'Allergens: ',
                                                               style: FlutterFlowTheme
@@ -5062,8 +4972,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                             child: Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.00,
-                                                                      0.00),
+                                                                      -1.0,
+                                                                      0.0),
                                                               child: Text(
                                                                 GetMenuItemCall
                                                                             .allergen(
@@ -5150,11 +5060,40 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                               ),
                               Text(
                                 valueOrDefault<String>(
-                                  GetMenuItemCall.serving(
-                                    classificationPageGetMenuItemResponse
-                                        .jsonBody,
-                                  ).toString(),
-                                  'N / A ',
+                                  GetMenuItemCall.servingsize(
+                                            classificationPageGetMenuItemResponse
+                                                .jsonBody,
+                                          ) !=
+                                          null
+                                      ? GetMenuItemCall.servingsize(
+                                          classificationPageGetMenuItemResponse
+                                              .jsonBody,
+                                        ).toString()
+                                      : (GetMenuItemCall.servingquantity(
+                                                classificationPageGetMenuItemResponse
+                                                    .jsonBody,
+                                              ) !=
+                                              null
+                                          ? GetMenuItemCall.servingquantity(
+                                              classificationPageGetMenuItemResponse
+                                                  .jsonBody,
+                                            ).toString()
+                                          : (GetMenuItemCall.quantity(
+                                                        classificationPageGetMenuItemResponse
+                                                            .jsonBody,
+                                                      ).toString() !=
+                                                      null &&
+                                                  GetMenuItemCall.quantity(
+                                                        classificationPageGetMenuItemResponse
+                                                            .jsonBody,
+                                                      ).toString() !=
+                                                      ''
+                                              ? GetMenuItemCall.quantity(
+                                                  classificationPageGetMenuItemResponse
+                                                      .jsonBody,
+                                                ).toString()
+                                              : 'N / A')),
+                                  'N / A',
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium

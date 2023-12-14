@@ -77,7 +77,7 @@ class _BottomPopupWidgetState extends State<BottomPopupWidget> {
                 children: [
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(60.0, 0.0, 0.0, 0.0),
@@ -102,8 +102,7 @@ class _BottomPopupWidgetState extends State<BottomPopupWidget> {
                       text: 'Done',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        padding: EdgeInsets.all(0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: Color(0x00EBE5EA),

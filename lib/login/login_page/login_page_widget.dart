@@ -497,7 +497,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.00, 1.00),
+                                                            0.0, 1.0),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -579,7 +579,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: FaIcon(
                                                         FontAwesomeIcons.google,
                                                         color: FlutterFlowTheme
@@ -660,7 +660,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: Icon(
                                                         Icons.person,
                                                         color: FlutterFlowTheme
@@ -704,7 +704,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: Icon(
                                                         Icons.phone_sharp,
                                                         color: FlutterFlowTheme
@@ -1362,7 +1362,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: FaIcon(
                                                         FontAwesomeIcons.google,
                                                         color: FlutterFlowTheme
@@ -1447,7 +1447,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: Icon(
                                                         Icons.person,
                                                         color: FlutterFlowTheme
@@ -1491,7 +1491,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                              0.0, 0.0),
                                                       child: Icon(
                                                         Icons.phone_sharp,
                                                         color: FlutterFlowTheme

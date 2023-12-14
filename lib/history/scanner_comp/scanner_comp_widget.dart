@@ -374,7 +374,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.00, -1.00),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).secondaryBackground,
                 borderRadius: 20.0,

@@ -76,7 +76,7 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
             ),
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.00, 1.00),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -296,8 +296,7 @@ class _Robin3PhoneAuthPageWidgetState extends State<Robin3PhoneAuthPageWidget> {
                                 options: FFButtonOptions(
                                   width: 350.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 8.0, 8.0, 8.0),
+                                  padding: EdgeInsets.all(8.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).accent1,

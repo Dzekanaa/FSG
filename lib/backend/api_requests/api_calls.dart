@@ -26,14 +26,15 @@ class GetMenuItemCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 
-  static dynamic ingredientsList(dynamic response) => getJsonField(
+  static List? ingredientsList(dynamic response) => getJsonField(
         response,
         r'''$.data.ingredients''',
         true,
-      );
+      ) as List?;
   static dynamic brand(dynamic response) => getJsonField(
         response,
         r'''$.data.brands''',
@@ -66,11 +67,13 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments.energy''',
       );
-  static dynamic ingtextList(dynamic response) => getJsonField(
+  static List<String>? ingtextList(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients_text''',
         true,
-      );
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
   static dynamic category(dynamic response) => getJsonField(
         response,
         r'''$.data.pnns_groups_1''',
@@ -275,11 +278,13 @@ class GetMenuItemCall {
         response,
         r'''$.data''',
       );
-  static dynamic ingrValue(dynamic response) => getJsonField(
+  static List<int>? ingrValue(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[?(@.percent_estimate != 0)].percent_estimate''',
         true,
-      );
+      ) as List?)
+          ?.withoutNulls
+          .cast<int>();
   static dynamic traces(dynamic response) => getJsonField(
         response,
         r'''$.data.traces''',
@@ -304,20 +309,44 @@ class GetMenuItemCall {
         response,
         r'''$.data.packaging''',
       );
-  static dynamic ingrText(dynamic response) => getJsonField(
+  static List<String>? ingrText(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[?(@.percent_estimate != 0)].id''',
         true,
-      );
-  static dynamic allist(dynamic response) => getJsonField(
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List? allist(dynamic response) => getJsonField(
         response,
         r'''$.data.traces_tags''',
         true,
-      );
-  static dynamic tralist(dynamic response) => getJsonField(
+      ) as List?;
+  static List? tralist(dynamic response) => getJsonField(
         response,
         r'''$.data.allergens_tags''',
         true,
+      ) as List?;
+  static List<String>? erText(dynamic response) => (getJsonField(
+        response,
+        r'''$.data.ingredients[:].text''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<int>? erList(dynamic response) => (getJsonField(
+        response,
+        r'''$.data.ingredients[:].percent_estimate''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<int>();
+  static dynamic servingsize(dynamic response) => getJsonField(
+        response,
+        r'''$.data.serving_size''',
+      );
+  static dynamic servingquantity(dynamic response) => getJsonField(
+        response,
+        r'''$.data.serving_quantity''',
       );
 }
 
