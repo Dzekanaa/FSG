@@ -35,246 +35,253 @@ class GetMenuItemCall {
         r'''$.data.ingredients''',
         true,
       ) as List?;
-  static dynamic brand(dynamic response) => getJsonField(
+  static String? brand(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.brands''',
-      );
-  static dynamic quantity(dynamic response) => getJsonField(
+      ));
+  static String? quantity(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.quantity''',
-      );
-  static dynamic img(dynamic response) => getJsonField(
+      ));
+  static String? img(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.image_url''',
-      );
-  static dynamic title(dynamic response) => getJsonField(
+      ));
+  static String? title(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.product_name''',
-      );
-  static dynamic ecograde(dynamic response) => getJsonField(
+      ));
+  static String? ecograde(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.ecoscore_grade''',
-      );
-  static dynamic grade(dynamic response) => getJsonField(
+      ));
+  static String? grade(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutrition_grades''',
-      );
-  static dynamic energyUnit(dynamic response) => getJsonField(
+      ));
+  static String? energyUnit(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.energy_unit''',
-      );
-  static dynamic energy(dynamic response) => getJsonField(
+      ));
+  static int? energy(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.nutriments.energy''',
-      );
+      ));
   static List<String>? ingtextList(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients_text''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
-  static dynamic category(dynamic response) => getJsonField(
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static String? category(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.pnns_groups_1''',
-      );
-  static dynamic saltlvl(dynamic response) => getJsonField(
+      ));
+  static String? saltlvl(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutrient_levels.fat''',
-      );
-  static dynamic fatlvl(dynamic response) => getJsonField(
+      ));
+  static String? fatlvl(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutrient_levels.salt''',
-      );
-  static dynamic sugarlvl(dynamic response) => getJsonField(
+      ));
+  static String? sugarlvl(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutrient_levels.sugars''',
-      );
-  static dynamic fat(dynamic response) => getJsonField(
+      ));
+  static int? fat(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.nutriments.fat''',
-      );
-  static dynamic iron(dynamic response) => getJsonField(
+      ));
+  static double? iron(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.iron''',
-      );
-  static dynamic fiber(dynamic response) => getJsonField(
+      ));
+  static double? fiber(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.fiber''',
-      );
-  static dynamic sugar(dynamic response) => getJsonField(
+      ));
+  static double? sugar(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.sugars''',
-      );
-  static dynamic proteins(dynamic response) => getJsonField(
+      ));
+  static double? proteins(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.proteins''',
-      );
-  static dynamic ironUnit(dynamic response) => getJsonField(
+      ));
+  static String? ironUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.iron_unit''',
-      );
-  static dynamic saltUnit(dynamic response) => getJsonField(
+      ));
+  static String? saltUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.salt_unit''',
-      );
-  static dynamic fiberUnit(dynamic response) => getJsonField(
+      ));
+  static String? fiberUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.fiber_unit''',
-      );
-  static dynamic soduimUnit(dynamic response) => getJsonField(
+      ));
+  static String? soduimUnit(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.sodium_unit''',
-      );
-  static dynamic sugarUnit(dynamic response) => getJsonField(
+      ));
+  static String? sugarUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.sugars_unit''',
-      );
-  static dynamic alcoholUnit(dynamic response) => getJsonField(
+      ));
+  static String? alcoholUnit(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.alcohol_unit''',
-      );
-  static dynamic carb(dynamic response) => getJsonField(
+      ));
+  static double? carb(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.carbohydrates''',
-      );
-  static dynamic proteinsUnit(dynamic response) => getJsonField(
+      ));
+  static String? proteinsUnit(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.proteins_unit''',
-      );
-  static dynamic energy100(dynamic response) => getJsonField(
+      ));
+  static int? energy100(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.nutriments.energy_serving''',
-      );
-  static dynamic carbUnit(dynamic response) => getJsonField(
+      ));
+  static String? carbUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.carbohydrates_unit''',
-      );
-  static dynamic fatUnit(dynamic response) => getJsonField(
+      ));
+  static String? fatUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.fat_unit''',
-      );
-  static dynamic sodium(dynamic response) => getJsonField(
+      ));
+  static int? sodium(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.nutriments.sodium''',
-      );
-  static dynamic salt(dynamic response) => getJsonField(
+      ));
+  static double? salt(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.salt''',
-      );
-  static dynamic alcohol(dynamic response) => getJsonField(
+      ));
+  static dynamic? alcohol(dynamic response) => getJsonField(
         response,
         r'''$.data.nutriments.alcohol''',
       );
-  static dynamic calcium(dynamic response) => getJsonField(
+  static int? calcium(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.nutriments.calcium''',
-      );
-  static dynamic calciumUnit(dynamic response) => getJsonField(
+      ));
+  static String? calciumUnit(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.sodium_unit''',
-      );
-  static dynamic vegan(dynamic response) => getJsonField(
+      ));
+  static bool? vegan(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.LifestyleChoices.Vegan''',
-      );
-  static dynamic ovovege(dynamic response) => getJsonField(
+      ));
+  static bool? ovovege(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.LifestyleChoices.OvoVegetarian''',
-      );
-  static dynamic pesca(dynamic response) => getJsonField(
+      ));
+  static bool? pesca(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.LifestyleChoices.Pescatarian''',
-      );
-  static dynamic whitemeat(dynamic response) => getJsonField(
+      ));
+  static bool? whitemeat(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.LifestyleChoices.WhiteMeatOnly''',
-      );
-  static dynamic halal(dynamic response) => getJsonField(
+      ));
+  static String? halal(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.ReligiousRestrictions.Halal''',
-      );
-  static dynamic kosher(dynamic response) => getJsonField(
+      ));
+  static String? kosher(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.ReligiousRestrictions.Kosher''',
-      );
-  static dynamic jain(dynamic response) => getJsonField(
+      ));
+  static String? jain(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.ReligiousRestrictions.Jain''',
-      );
-  static dynamic organic(dynamic response) => getJsonField(
+      ));
+  static String? organic(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.SustainabilityChoices.Organic''',
-      );
-  static dynamic gmo(dynamic response) => getJsonField(
+      ));
+  static String? gmo(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.SustainabilityChoices.GeneticallyModified''',
-      );
-  static dynamic alcelery(dynamic response) => getJsonField(
+      ));
+  static bool? alcelery(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.celery''',
-      );
-  static dynamic alcereals(dynamic response) => getJsonField(
+      ));
+  static bool? alcereals(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.cereals_containing_gluten''',
-      );
-  static dynamic alcrustaceans(dynamic response) => getJsonField(
+      ));
+  static bool? alcrustaceans(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.crustaceans''',
-      );
-  static dynamic aleggs(dynamic response) => getJsonField(
+      ));
+  static bool? aleggs(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.eggs''',
-      );
-  static dynamic alfish(dynamic response) => getJsonField(
+      ));
+  static bool? alfish(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.fish''',
-      );
-  static dynamic allupin(dynamic response) => getJsonField(
+      ));
+  static bool? allupin(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.lupin''',
-      );
-  static dynamic almilk(dynamic response) => getJsonField(
+      ));
+  static String? almilk(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.analysis.Allergens.milk''',
-      );
-  static dynamic almolluscs(dynamic response) => getJsonField(
+      ));
+  static bool? almolluscs(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.molluscs''',
-      );
-  static dynamic almustard(dynamic response) => getJsonField(
+      ));
+  static bool? almustard(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.mustard''',
-      );
-  static dynamic alnuts(dynamic response) => getJsonField(
+      ));
+  static bool? alnuts(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.nuts''',
-      );
-  static dynamic alpeanuts(dynamic response) => getJsonField(
+      ));
+  static bool? alpeanuts(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.peanuts''',
-      );
-  static dynamic alsesame(dynamic response) => getJsonField(
+      ));
+  static bool? alsesame(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.sesame_seeds''',
-      );
-  static dynamic alsulphur(dynamic response) => getJsonField(
+      ));
+  static bool? alsulphur(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.Allergens.sulphur_dioxide''',
-      );
-  static dynamic nutri(dynamic response) => getJsonField(
+      ));
+  static dynamic? nutri(dynamic response) => getJsonField(
         response,
         r'''$.data.nutriments''',
       );
-  static dynamic serving(dynamic response) => getJsonField(
+  static String? serving(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.serving_quantity''',
-      );
-  static dynamic mess(dynamic response) => getJsonField(
+      ));
+  static String? mess(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.message''',
-      );
-  static dynamic data(dynamic response) => getJsonField(
+      ));
+  static dynamic? data(dynamic response) => getJsonField(
         response,
         r'''$.data''',
       );
@@ -284,38 +291,42 @@ class GetMenuItemCall {
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<int>();
-  static dynamic traces(dynamic response) => getJsonField(
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static String? traces(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.traces''',
-      );
-  static dynamic stores(dynamic response) => getJsonField(
+      ));
+  static String? stores(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.stores''',
-      );
-  static dynamic labels(dynamic response) => getJsonField(
+      ));
+  static String? labels(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.labels''',
-      );
-  static dynamic allergen(dynamic response) => getJsonField(
+      ));
+  static String? allergen(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.allergens''',
-      );
-  static dynamic country(dynamic response) => getJsonField(
+      ));
+  static String? country(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.countries''',
-      );
-  static dynamic pack(dynamic response) => getJsonField(
+      ));
+  static String? pack(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.packaging''',
-      );
+      ));
   static List<String>? ingrText(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[?(@.percent_estimate != 0)].id''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List? allist(dynamic response) => getJsonField(
         response,
         r'''$.data.traces_tags''',
@@ -332,19 +343,23 @@ class GetMenuItemCall {
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<int>? erList(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[:].percent_estimate''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<int>();
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   static dynamic servingsize(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_size''',
       );
-  static dynamic servingquantity(dynamic response) => getJsonField(
+  static dynamic? servingquantity(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_quantity''',
       );

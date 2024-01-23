@@ -62,7 +62,7 @@ class ScannerCompModel extends FlutterFlowModel<ScannerCompWidget> {
             null) &&
         (GetMenuItemCall.mess(
               (succes?.jsonBody ?? ''),
-            ).toString() !=
+            ) !=
             'No product found')) {
       context.goNamed(
         'ClassificationPage',
@@ -84,10 +84,10 @@ class ScannerCompModel extends FlutterFlowModel<ScannerCompWidget> {
           ),
           grade: GetMenuItemCall.grade(
             (succes?.jsonBody ?? ''),
-          ).toString(),
+          ),
           text: GetMenuItemCall.title(
             (succes?.jsonBody ?? ''),
-          ).toString(),
+          ),
           image: GetMenuItemCall.img(
             (succes?.jsonBody ?? ''),
           ),
@@ -106,10 +106,10 @@ class ScannerCompModel extends FlutterFlowModel<ScannerCompWidget> {
           ),
           grade: GetMenuItemCall.grade(
             (succes?.jsonBody ?? ''),
-          ).toString(),
+          ),
           text: GetMenuItemCall.title(
             (succes?.jsonBody ?? ''),
-          ).toString(),
+          ),
           image: GetMenuItemCall.img(
             (succes?.jsonBody ?? ''),
           ),

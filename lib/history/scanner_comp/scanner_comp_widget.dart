@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -148,7 +149,29 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                               _model.barcodeTextController?.text =
                                   _model.barcode!;
                             });
-                            await _model.funk(context);
+                            if (functions.checkBarcode(
+                                    _model.barcodeTextController.text) ==
+                                true) {
+                              await _model.funk(context);
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Error'),
+                                    content: Text(
+                                        'Your barcode is not in correct format.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
 
                             setState(() {});
                           },
@@ -361,7 +384,30 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                 onPressed: FFAppState().anonimus
                                     ? null
                                     : () async {
-                                        await _model.funk(context);
+                                        if (functions.checkBarcode(_model
+                                                .barcodeTextController.text) ==
+                                            true) {
+                                          await _model.funk(context);
+                                        } else {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Error'),
+                                                content: Text(
+                                                    'Your barcode is not in correct format.'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
                                       },
                               ),
                             ],

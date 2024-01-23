@@ -237,13 +237,13 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                 GetMenuItemCall.title(
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
-                                        ).toString() ==
+                                        ) ==
                                         'null'
                                     ? 'Product'
                                     : GetMenuItemCall.title(
                                         classificationPageGetMenuItemResponse
                                             .jsonBody,
-                                      ).toString(),
+                                      )!,
                                 textAlign: TextAlign.start,
                                 maxLines: 5,
                                 style: FlutterFlowTheme.of(context)
@@ -296,6 +296,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                     ),
                                   ],
                                   controller: _model.tabBarController,
+                                  onTap: (i) async {
+                                    [
+                                      () async {},
+                                      () async {},
+                                      () async {},
+                                      () async {}
+                                    ][i]();
+                                  },
                                 ),
                               ),
                               Expanded(
@@ -465,7 +473,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     Text(
                                                                                       GetMenuItemCall.vegan(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!
+                                                                                          .toString(),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -477,7 +486,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     Text(
                                                                                       GetMenuItemCall.vegan(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!
+                                                                                          .toString(),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -489,7 +499,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     Text(
                                                                                       GetMenuItemCall.vegan(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!
+                                                                                          .toString(),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -589,7 +600,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.ovovege(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -601,7 +613,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.ovovege(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -613,7 +626,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.ovovege(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -711,7 +725,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.pesca(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -723,7 +738,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.pesca(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -735,7 +751,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.pesca(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -833,7 +850,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.whitemeat(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -845,7 +863,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.whitemeat(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -857,7 +876,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.whitemeat(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -937,11 +957,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.halal(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.halal(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -1001,7 +1021,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.halal(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1013,7 +1033,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.halal(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1025,7 +1045,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.halal(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1061,11 +1081,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.kosher(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.kosher(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -1125,7 +1145,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.kosher(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1137,7 +1157,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.kosher(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1149,7 +1169,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.kosher(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1185,11 +1205,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.jain(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.jain(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -1249,7 +1269,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.jain(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1261,7 +1281,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.jain(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1273,7 +1293,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.jain(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1353,11 +1373,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.organic(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.organic(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -1417,7 +1437,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.organic(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1429,7 +1449,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.organic(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1441,7 +1461,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.organic(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1477,11 +1497,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.gmo(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.gmo(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -1541,7 +1561,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.gmo(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1553,7 +1573,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.gmo(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1565,7 +1585,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.gmo(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1663,7 +1683,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsulphur(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1675,7 +1696,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsulphur(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1687,7 +1709,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsulphur(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1849,7 +1872,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcelery(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1861,7 +1885,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcelery(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1873,7 +1898,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcelery(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1971,7 +1997,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcereals(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1983,7 +2010,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcereals(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1995,7 +2023,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alcereals(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2093,7 +2122,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.aleggs(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2105,7 +2135,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.aleggs(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2117,7 +2148,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.aleggs(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2215,7 +2247,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alfish(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2227,7 +2260,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alfish(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2239,7 +2273,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alfish(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2275,11 +2310,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       bool>(
                                                                     GetMenuItemCall.almilk(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             null &&
                                                                         GetMenuItemCall.almilk(
                                                                               classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ).toString() !=
+                                                                            ) !=
                                                                             '',
                                                                     false,
                                                                   ),
@@ -2339,7 +2374,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.almilk(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2351,7 +2386,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.almilk(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2363,7 +2398,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.almilk(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2461,7 +2496,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alnuts(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2473,7 +2509,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alnuts(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2485,7 +2522,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alnuts(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2583,7 +2621,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsesame(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2595,7 +2634,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsesame(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2607,7 +2647,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       Text(
                                                                                         GetMenuItemCall.alsesame(
                                                                                           classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        ).toString(),
+                                                                                        )!
+                                                                                            .toString(),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2831,13 +2872,10 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               child:
                                                                   FlutterFlowChartLegendWidget(
                                                                 entries: functions
-                                                                    .skini3char((GetMenuItemCall.ingrText(
+                                                                    .skini3char(GetMenuItemCall.ingrText(
                                                                       classificationPageGetMenuItemResponse
                                                                           .jsonBody,
-                                                                    ) as List)
-                                                                        .map<String>((s) => s.toString())
-                                                                        .toList()
-                                                                        ?.toList())!
+                                                                    )?.toList())!
                                                                     .asMap()
                                                                     .entries
                                                                     .map(
@@ -3074,7 +3112,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.fat(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3085,7 +3124,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.fatUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3195,7 +3234,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.alcoholUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3294,7 +3333,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.iron(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3305,7 +3345,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.ironUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3404,7 +3444,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.fiber(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3415,7 +3456,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.fiberUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3514,7 +3555,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.sugar(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3525,7 +3567,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.sugarUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3623,7 +3665,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.proteins(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3634,7 +3677,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.proteinsUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3733,7 +3776,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.carb(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3744,7 +3788,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.carbUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3843,7 +3887,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.energy100(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3854,7 +3899,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.energyUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3953,7 +3998,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.sodium(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -3964,7 +4010,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.soduimUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4060,7 +4106,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.salt(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -4071,7 +4118,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.saltUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4167,7 +4214,8 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Text(
                                                                                     GetMenuItemCall.calcium(
                                                                                       classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
+                                                                                    )!
+                                                                                        .toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Nunito Sans',
                                                                                           fontSize: 16.0,
@@ -4178,7 +4226,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                     child: Text(
                                                                                       GetMenuItemCall.calciumUnit(
                                                                                         classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      ).toString(),
+                                                                                      )!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4279,7 +4327,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .brand(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               style: FlutterFlowTheme
@@ -4337,7 +4385,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .country(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ).maybeHandleOverflow(
                                                                   maxChars: 30),
@@ -4396,7 +4444,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   .quantity(
                                                                 classificationPageGetMenuItemResponse
                                                                     .jsonBody,
-                                                              ).toString(),
+                                                              ),
                                                               'N / A',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -4454,10 +4502,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     null
                                                                 ? 'N / A '
                                                                 : GetMenuItemCall
-                                                                    .energy(
+                                                                        .energy(
                                                                     classificationPageGetMenuItemResponse
                                                                         .jsonBody,
-                                                                  ).toString(),
+                                                                  )!
+                                                                    .toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -4478,7 +4527,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                   .energyUnit(
                                                                 classificationPageGetMenuItemResponse
                                                                     .jsonBody,
-                                                              ).toString(),
+                                                              ),
                                                               'KJ',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -4529,18 +4578,17 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                           ),
                                                           Text(
                                                             GetMenuItemCall
-                                                                            .grade(
+                                                                        .grade(
                                                                       classificationPageGetMenuItemResponse
                                                                           .jsonBody,
-                                                                    )
-                                                                        .toString() ==
+                                                                    ) ==
                                                                     'null'
                                                                 ? 'unknown'
                                                                 : GetMenuItemCall
                                                                     .grade(
                                                                     classificationPageGetMenuItemResponse
                                                                         .jsonBody,
-                                                                  ).toString(),
+                                                                  )!,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -4595,7 +4643,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .ecograde(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               style: FlutterFlowTheme
@@ -4653,7 +4701,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .category(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               maxLines: 2,
@@ -4712,7 +4760,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .pack(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               maxLines: 2,
@@ -4771,7 +4819,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .labels(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               maxLines: 2,
@@ -4830,7 +4878,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                     .stores(
                                                                   classificationPageGetMenuItemResponse
                                                                       .jsonBody,
-                                                                ).toString(),
+                                                                ),
                                                                 'N / A',
                                                               ),
                                                               maxLines: 2,
@@ -4897,19 +4945,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                             .traces(
                                                                           classificationPageGetMenuItemResponse
                                                                               .jsonBody,
-                                                                        ).toString() ==
+                                                                        ) ==
                                                                         'null'
                                                                     ? 'no traces'
                                                                     : functions.spoji(functions
-                                                                        .skini3char((GetMenuItemCall.tralist(
+                                                                        .skini3char(GetMenuItemCall.tralist(
                                                                           classificationPageGetMenuItemResponse
                                                                               .jsonBody,
-                                                                        ) as List)
-                                                                            .map<String>((s) => s.toString())
-                                                                            .toList()
-                                                                            ?.map((e) => e.toString())
-                                                                            .toList()
-                                                                            ?.toList())
+                                                                        )?.map((e) => e.toString()).toList()?.toList())
                                                                         ?.toList())!,
                                                                 textAlign:
                                                                     TextAlign
@@ -4979,19 +5022,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                             .allergen(
                                                                           classificationPageGetMenuItemResponse
                                                                               .jsonBody,
-                                                                        ).toString() ==
+                                                                        ) ==
                                                                         'null'
                                                                     ? 'no allergens'
                                                                     : functions.spoji(functions
-                                                                        .skini3char((GetMenuItemCall.allist(
+                                                                        .skini3char(GetMenuItemCall.allist(
                                                                           classificationPageGetMenuItemResponse
                                                                               .jsonBody,
-                                                                        ) as List)
-                                                                            .map<String>((s) => s.toString())
-                                                                            .toList()
-                                                                            ?.map((e) => e.toString())
-                                                                            .toList()
-                                                                            ?.toList())
+                                                                        )?.map((e) => e.toString()).toList()?.toList())
                                                                         ?.toList())!,
                                                                 maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
@@ -5036,11 +5074,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                       ),
                       if (GetMenuItemCall.serving(
                                 classificationPageGetMenuItemResponse.jsonBody,
-                              ).toString() !=
+                              ) !=
                               null &&
                           GetMenuItemCall.serving(
                                 classificationPageGetMenuItemResponse.jsonBody,
-                              ).toString() !=
+                              ) !=
                               '')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -5069,30 +5107,38 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
                                         ).toString()
-                                      : (GetMenuItemCall.servingquantity(
-                                                classificationPageGetMenuItemResponse
-                                                    .jsonBody,
-                                              ) !=
-                                              null
-                                          ? GetMenuItemCall.servingquantity(
-                                              classificationPageGetMenuItemResponse
-                                                  .jsonBody,
-                                            ).toString()
-                                          : (GetMenuItemCall.quantity(
-                                                        classificationPageGetMenuItemResponse
-                                                            .jsonBody,
-                                                      ).toString() !=
-                                                      null &&
-                                                  GetMenuItemCall.quantity(
-                                                        classificationPageGetMenuItemResponse
-                                                            .jsonBody,
-                                                      ).toString() !=
-                                                      ''
-                                              ? GetMenuItemCall.quantity(
+                                      : valueOrDefault<String>(
+                                          GetMenuItemCall.servingquantity(
+                                                    classificationPageGetMenuItemResponse
+                                                        .jsonBody,
+                                                  ) !=
+                                                  null
+                                              ? GetMenuItemCall.servingquantity(
                                                   classificationPageGetMenuItemResponse
                                                       .jsonBody,
                                                 ).toString()
-                                              : 'N / A')),
+                                              : valueOrDefault<String>(
+                                                  GetMenuItemCall.quantity(
+                                                                classificationPageGetMenuItemResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              null &&
+                                                          GetMenuItemCall
+                                                                  .quantity(
+                                                                classificationPageGetMenuItemResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              ''
+                                                      ? GetMenuItemCall
+                                                          .quantity(
+                                                          classificationPageGetMenuItemResponse
+                                                              .jsonBody,
+                                                        )
+                                                      : 'N / A',
+                                                  'N / A',
+                                                ),
+                                          'N / A',
+                                        ),
                                   'N / A',
                                 ),
                                 style: FlutterFlowTheme.of(context)
