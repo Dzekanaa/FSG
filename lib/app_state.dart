@@ -55,6 +55,12 @@ class FFAppState extends ChangeNotifier {
   set anonimus(bool _value) {
     _anonimus = _value;
   }
+
+  bool _skener = true;
+  bool get skener => _skener;
+  set skener(bool _value) {
+    _skener = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

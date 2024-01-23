@@ -234,16 +234,24 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 0.0, 0.0),
                               child: Text(
-                                GetMenuItemCall.title(
+                                valueOrDefault<String>(
+                                  GetMenuItemCall.title(
+                                                classificationPageGetMenuItemResponse
+                                                    .jsonBody,
+                                              ) ==
+                                              null ||
+                                          GetMenuItemCall.title(
+                                                classificationPageGetMenuItemResponse
+                                                    .jsonBody,
+                                              ) ==
+                                              ''
+                                      ? 'Product'
+                                      : GetMenuItemCall.title(
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
-                                        ) ==
-                                        'null'
-                                    ? 'Product'
-                                    : GetMenuItemCall.title(
-                                        classificationPageGetMenuItemResponse
-                                            .jsonBody,
-                                      )!,
+                                        ),
+                                  'Product',
+                                ),
                                 textAlign: TextAlign.start,
                                 maxLines: 5,
                                 style: FlutterFlowTheme.of(context)
@@ -4324,11 +4332,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .brand(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .brand(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .brand(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .brand(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4382,11 +4401,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .country(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .country(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .country(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .country(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ).maybeHandleOverflow(
                                                                   maxChars: 30),
                                                               maxLines: 2,
@@ -4441,11 +4471,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                             valueOrDefault<
                                                                 String>(
                                                               GetMenuItemCall
-                                                                  .quantity(
-                                                                classificationPageGetMenuItemResponse
-                                                                    .jsonBody,
-                                                              ),
-                                                              'N / A',
+                                                                              .quantity(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          null ||
+                                                                      GetMenuItemCall
+                                                                              .quantity(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          ''
+                                                                  ? 'N / A '
+                                                                  : GetMenuItemCall
+                                                                      .quantity(
+                                                                      classificationPageGetMenuItemResponse
+                                                                          .jsonBody,
+                                                                    ),
+                                                              'N / A ',
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -4494,19 +4535,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                 ),
                                                           ),
                                                           Text(
-                                                            GetMenuItemCall
-                                                                        .energy(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              GetMenuItemCall
+                                                                          .energy(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ) ==
+                                                                      null
+                                                                  ? 'N / A '
+                                                                  : GetMenuItemCall
+                                                                      .energy(
                                                                       classificationPageGetMenuItemResponse
                                                                           .jsonBody,
-                                                                    ) ==
-                                                                    null
-                                                                ? 'N / A '
-                                                                : GetMenuItemCall
-                                                                        .energy(
-                                                                    classificationPageGetMenuItemResponse
-                                                                        .jsonBody,
-                                                                  )!
-                                                                    .toString(),
+                                                                    )?.toString(),
+                                                              'N / A',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -4577,18 +4621,26 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                 ),
                                                           ),
                                                           Text(
-                                                            GetMenuItemCall
-                                                                        .grade(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              GetMenuItemCall
+                                                                              .grade(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          null ||
+                                                                      GetMenuItemCall
+                                                                              .grade(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          ''
+                                                                  ? 'unknown'
+                                                                  : GetMenuItemCall
+                                                                      .grade(
                                                                       classificationPageGetMenuItemResponse
                                                                           .jsonBody,
-                                                                    ) ==
-                                                                    'null'
-                                                                ? 'unknown'
-                                                                : GetMenuItemCall
-                                                                    .grade(
-                                                                    classificationPageGetMenuItemResponse
-                                                                        .jsonBody,
-                                                                  )!,
+                                                                    ),
+                                                              'N / A ',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -4640,11 +4692,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .ecograde(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .ecograde(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .ecograde(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .ecograde(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4698,11 +4761,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .category(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .category(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .category(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .category(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               maxLines: 2,
                                                               style: FlutterFlowTheme
@@ -4757,11 +4831,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .pack(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .pack(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .pack(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .pack(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               maxLines: 2,
                                                               style: FlutterFlowTheme
@@ -4816,11 +4901,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .labels(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .labels(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .labels(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .labels(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               maxLines: 2,
                                                               style: FlutterFlowTheme
@@ -4875,11 +4971,22 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                    .stores(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ),
-                                                                'N / A',
+                                                                                .stores(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            null ||
+                                                                        GetMenuItemCall
+                                                                                .stores(
+                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                            ) ==
+                                                                            ''
+                                                                    ? 'N / A '
+                                                                    : GetMenuItemCall
+                                                                        .stores(
+                                                                        classificationPageGetMenuItemResponse
+                                                                            .jsonBody,
+                                                                      ),
+                                                                'N / A ',
                                                               ),
                                                               maxLines: 2,
                                                               style: FlutterFlowTheme
@@ -4941,19 +5048,24 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       -1.0,
                                                                       0.0),
                                                               child: Text(
-                                                                GetMenuItemCall
-                                                                            .traces(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        ) ==
-                                                                        'null'
-                                                                    ? 'no traces'
-                                                                    : functions.spoji(functions
-                                                                        .skini3char(GetMenuItemCall.tralist(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        )?.map((e) => e.toString()).toList()?.toList())
-                                                                        ?.toList())!,
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  GetMenuItemCall.traces(
+                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                              ) ==
+                                                                              null ||
+                                                                          GetMenuItemCall.traces(
+                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                              ) ==
+                                                                              ''
+                                                                      ? 'no traces'
+                                                                      : functions.spoji(functions
+                                                                          .skini3char(GetMenuItemCall.tralist(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          )?.map((e) => e.toString()).toList()?.toList())
+                                                                          ?.toList()),
+                                                                  ' No Traces',
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
@@ -5018,19 +5130,24 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       -1.0,
                                                                       0.0),
                                                               child: Text(
-                                                                GetMenuItemCall
-                                                                            .allergen(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        ) ==
-                                                                        'null'
-                                                                    ? 'no allergens'
-                                                                    : functions.spoji(functions
-                                                                        .skini3char(GetMenuItemCall.allist(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        )?.map((e) => e.toString()).toList()?.toList())
-                                                                        ?.toList())!,
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  GetMenuItemCall.allergen(
+                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                              ) ==
+                                                                              null ||
+                                                                          GetMenuItemCall.allergen(
+                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                              ) ==
+                                                                              ''
+                                                                      ? 'no allergens'
+                                                                      : functions.spoji(functions
+                                                                          .skini3char(GetMenuItemCall.allist(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          )?.map((e) => e.toString()).toList()?.toList())
+                                                                          ?.toList()),
+                                                                  ' No Allergens',
+                                                                ),
                                                                 maxLines: 2,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -5106,7 +5223,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                       ? GetMenuItemCall.servingsize(
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
-                                        ).toString()
+                                        )?.toString()
                                       : valueOrDefault<String>(
                                           GetMenuItemCall.servingquantity(
                                                     classificationPageGetMenuItemResponse

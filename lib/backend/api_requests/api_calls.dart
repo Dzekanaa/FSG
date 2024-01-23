@@ -285,13 +285,13 @@ class GetMenuItemCall {
         response,
         r'''$.data''',
       );
-  static List<int>? ingrValue(dynamic response) => (getJsonField(
+  static List<double>? ingrValue(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[?(@.percent_estimate != 0)].percent_estimate''',
         true,
       ) as List?)
           ?.withoutNulls
-          .map((x) => castToType<int>(x))
+          .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
   static String? traces(dynamic response) => castToType<String>(getJsonField(
@@ -346,19 +346,19 @@ class GetMenuItemCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  static List<int>? erList(dynamic response) => (getJsonField(
+  static List<double>? erList(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[:].percent_estimate''',
         true,
       ) as List?)
           ?.withoutNulls
-          .map((x) => castToType<int>(x))
+          .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  static dynamic servingsize(dynamic response) => getJsonField(
+  static int? servingsize(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data.serving_size''',
-      );
+      ));
   static dynamic? servingquantity(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_quantity''',

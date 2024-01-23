@@ -7,6 +7,7 @@ import '/help_pages/bottom_popup/bottom_popup_widget.dart';
 import '/history/scanner_comp/scanner_comp_widget.dart';
 import 'profile_widget.dart' show ProfileWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
