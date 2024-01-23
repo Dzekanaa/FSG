@@ -234,24 +234,16 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 8.0, 0.0, 0.0),
                               child: Text(
-                                valueOrDefault<String>(
-                                  GetMenuItemCall.title(
-                                                classificationPageGetMenuItemResponse
-                                                    .jsonBody,
-                                              ) ==
-                                              null ||
-                                          GetMenuItemCall.title(
-                                                classificationPageGetMenuItemResponse
-                                                    .jsonBody,
-                                              ) ==
-                                              ''
-                                      ? 'Product'
-                                      : GetMenuItemCall.title(
+                                GetMenuItemCall.title(
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
-                                        ),
-                                  'Product',
-                                ),
+                                        ) ==
+                                        'null'
+                                    ? 'Product'
+                                    : GetMenuItemCall.title(
+                                        classificationPageGetMenuItemResponse
+                                            .jsonBody,
+                                      )!,
                                 textAlign: TextAlign.start,
                                 maxLines: 5,
                                 style: FlutterFlowTheme.of(context)
@@ -2808,13 +2800,19 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  if (GetMenuItemCall
-                                                              .ingredientsList(
-                                                        classificationPageGetMenuItemResponse
-                                                            .jsonBody,
-                                                      )!
-                                                          .length >
-                                                      0)
+                                                  if ((GetMenuItemCall
+                                                                  .ingrValue(
+                                                                classificationPageGetMenuItemResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              null &&
+                                                          (GetMenuItemCall
+                                                                  .ingrValue(
+                                                            classificationPageGetMenuItemResponse
+                                                                .jsonBody,
+                                                          ))!
+                                                              .isNotEmpty) ==
+                                                      true)
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -2935,11 +2933,17 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                               ),
                                             ),
                                           ),
-                                          if (GetMenuItemCall.ingredientsList(
-                                                classificationPageGetMenuItemResponse
-                                                    .jsonBody,
-                                              )?.length ==
-                                              0)
+                                          if ((GetMenuItemCall.ingrValue(
+                                                        classificationPageGetMenuItemResponse
+                                                            .jsonBody,
+                                                      ) !=
+                                                      null &&
+                                                  (GetMenuItemCall.ingrValue(
+                                                    classificationPageGetMenuItemResponse
+                                                        .jsonBody,
+                                                  ))!
+                                                      .isNotEmpty) ==
+                                              false)
                                             wrapWithModel(
                                               model: _model.missingFoodModel,
                                               updateCallback: () =>
@@ -4971,22 +4975,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               valueOrDefault<
                                                                   String>(
                                                                 GetMenuItemCall
-                                                                                .stores(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ) ==
-                                                                            null ||
-                                                                        GetMenuItemCall
-                                                                                .stores(
-                                                                              classificationPageGetMenuItemResponse.jsonBody,
-                                                                            ) ==
-                                                                            ''
-                                                                    ? 'N / A '
-                                                                    : GetMenuItemCall
-                                                                        .stores(
-                                                                        classificationPageGetMenuItemResponse
-                                                                            .jsonBody,
-                                                                      ),
-                                                                'N / A ',
+                                                                    .stores(
+                                                                  classificationPageGetMenuItemResponse
+                                                                      .jsonBody,
+                                                                ),
+                                                                'N / A',
                                                               ),
                                                               maxLines: 2,
                                                               style: FlutterFlowTheme
@@ -5048,24 +5041,19 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       -1.0,
                                                                       0.0),
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  GetMenuItemCall.traces(
-                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                              ) ==
-                                                                              null ||
-                                                                          GetMenuItemCall.traces(
-                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                              ) ==
-                                                                              ''
-                                                                      ? 'no traces'
-                                                                      : functions.spoji(functions
-                                                                          .skini3char(GetMenuItemCall.tralist(
-                                                                            classificationPageGetMenuItemResponse.jsonBody,
-                                                                          )?.map((e) => e.toString()).toList()?.toList())
-                                                                          ?.toList()),
-                                                                  ' No Traces',
-                                                                ),
+                                                                GetMenuItemCall
+                                                                            .traces(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        ) ==
+                                                                        'null'
+                                                                    ? 'no traces'
+                                                                    : functions.spoji(functions
+                                                                        .skini3char(GetMenuItemCall.tralist(
+                                                                          classificationPageGetMenuItemResponse
+                                                                              .jsonBody,
+                                                                        )?.map((e) => e.toString()).toList()?.toList())
+                                                                        ?.toList())!,
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
@@ -5132,14 +5120,11 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                               child: Text(
                                                                 valueOrDefault<
                                                                     String>(
-                                                                  GetMenuItemCall.allergen(
-                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                              ) ==
-                                                                              null ||
-                                                                          GetMenuItemCall.allergen(
-                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                              ) ==
-                                                                              ''
+                                                                  GetMenuItemCall
+                                                                              .allergen(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          'null'
                                                                       ? 'no allergens'
                                                                       : functions.spoji(functions
                                                                           .skini3char(GetMenuItemCall.allist(
@@ -5223,7 +5208,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                       ? GetMenuItemCall.servingsize(
                                           classificationPageGetMenuItemResponse
                                               .jsonBody,
-                                        )?.toString()
+                                        ).toString()
                                       : valueOrDefault<String>(
                                           GetMenuItemCall.servingquantity(
                                                     classificationPageGetMenuItemResponse

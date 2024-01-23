@@ -160,7 +160,7 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments.fat_unit''',
       ));
-  static int? sodium(dynamic response) => castToType<int>(getJsonField(
+  static double? sodium(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.sodium''',
       ));
@@ -172,7 +172,7 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments.alcohol''',
       );
-  static int? calcium(dynamic response) => castToType<int>(getJsonField(
+  static double? calcium(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.calcium''',
       ));
@@ -355,11 +355,11 @@ class GetMenuItemCall {
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  static int? servingsize(dynamic response) => castToType<int>(getJsonField(
+  static dynamic servingsize(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_size''',
-      ));
-  static dynamic? servingquantity(dynamic response) => getJsonField(
+      );
+  static dynamic servingquantity(dynamic response) => getJsonField(
         response,
         r'''$.data.serving_quantity''',
       );
