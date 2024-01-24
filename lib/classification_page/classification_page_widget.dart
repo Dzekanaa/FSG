@@ -3134,9 +3134,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.fatUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.fatUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.fatUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.fatUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3244,9 +3256,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.alcoholUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.alcoholUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.alcoholUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.alcoholUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3355,9 +3379,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.ironUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.ironUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.ironUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.ironUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3466,9 +3502,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.fiberUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.fiberUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.fiberUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.fiberUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3577,9 +3625,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.sugarUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.sugarUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.sugarUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.sugarUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3687,9 +3747,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.proteinsUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.proteinsUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.proteinsUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.proteinsUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3798,9 +3870,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.carbUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.carbUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.carbUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.carbUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -3909,9 +3993,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.energyUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.energyUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.energyUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.energyUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4020,9 +4116,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.soduimUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.soduimUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.soduimUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.soduimUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4128,9 +4236,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.saltUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.saltUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.saltUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.saltUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -4236,9 +4356,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                                                                                     child: Text(
-                                                                                      GetMenuItemCall.calciumUnit(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!,
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.calciumUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    null &&
+                                                                                                GetMenuItemCall.calciumUnit(
+                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                    ) !=
+                                                                                                    ''
+                                                                                            ? GetMenuItemCall.calciumUnit(
+                                                                                                classificationPageGetMenuItemResponse.jsonBody,
+                                                                                              )
+                                                                                            : 'N / A',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ),
@@ -5041,19 +5173,21 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                       -1.0,
                                                                       0.0),
                                                               child: Text(
-                                                                GetMenuItemCall
-                                                                            .traces(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        ) ==
-                                                                        'null'
-                                                                    ? 'no traces'
-                                                                    : functions.spoji(functions
-                                                                        .skini3char(GetMenuItemCall.tralist(
-                                                                          classificationPageGetMenuItemResponse
-                                                                              .jsonBody,
-                                                                        )?.map((e) => e.toString()).toList()?.toList())
-                                                                        ?.toList())!,
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  GetMenuItemCall
+                                                                              .traces(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          ) ==
+                                                                          'null'
+                                                                      ? 'no traces'
+                                                                      : functions.spoji(functions
+                                                                          .skini3char(GetMenuItemCall.tralist(
+                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                          )?.map((e) => e.toString()).toList()?.toList())
+                                                                          ?.toList()),
+                                                                  ' No Traces',
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
