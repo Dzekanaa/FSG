@@ -11,10 +11,10 @@ import 'verify_code_model.dart';
 export 'verify_code_model.dart';
 
 class VerifyCodeWidget extends StatefulWidget {
-  const VerifyCodeWidget({Key? key}) : super(key: key);
+  const VerifyCodeWidget({super.key});
 
   @override
-  _VerifyCodeWidgetState createState() => _VerifyCodeWidgetState();
+  State<VerifyCodeWidget> createState() => _VerifyCodeWidgetState();
 }
 
 class _VerifyCodeWidgetState extends State<VerifyCodeWidget> {

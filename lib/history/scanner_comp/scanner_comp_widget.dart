@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,10 +14,10 @@ import 'scanner_comp_model.dart';
 export 'scanner_comp_model.dart';
 
 class ScannerCompWidget extends StatefulWidget {
-  const ScannerCompWidget({Key? key}) : super(key: key);
+  const ScannerCompWidget({super.key});
 
   @override
-  _ScannerCompWidgetState createState() => _ScannerCompWidgetState();
+  State<ScannerCompWidget> createState() => _ScannerCompWidgetState();
 }
 
 class _ScannerCompWidgetState extends State<ScannerCompWidget> {
@@ -40,6 +39,16 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
       setState(() {
         FFAppState().anonimus = false;
       });
+      if (FFAppState().skener) {
+        await _model.scan(context);
+        setState(() {
+          _model.barcodeTextController?.text = _model.barcode!;
+        });
+        await _model.funk(context);
+        setState(() {
+          FFAppState().skener = false;
+        });
+      }
     });
 
     _model.barcodeTextController ??= TextEditingController();
@@ -102,7 +111,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'Scan Bar Code',
+                          'Food Scan Genius',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
@@ -126,9 +135,9 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 20.0),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(18.0),
                             child: Image.asset(
-                              'assets/images/3d-casual-life-scanning-qr-code.png',
+                              'assets/images/Food_scan_geniusLOGO_NR_-03.png',
                               width: 246.0,
                               height: 196.0,
                               fit: BoxFit.contain,
@@ -149,29 +158,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                               _model.barcodeTextController?.text =
                                   _model.barcode!;
                             });
-                            if (functions.checkBarcode(
-                                    _model.barcodeTextController.text) ==
-                                true) {
-                              await _model.funk(context);
-                            } else {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    title: Text('Error'),
-                                    content: Text(
-                                        'Your barcode is not in correct format.'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            }
+                            await _model.funk(context);
 
                             setState(() {});
                           },
@@ -384,30 +371,7 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                                 onPressed: FFAppState().anonimus
                                     ? null
                                     : () async {
-                                        if (functions.checkBarcode(_model
-                                                .barcodeTextController.text) ==
-                                            true) {
-                                          await _model.funk(context);
-                                        } else {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('Error'),
-                                                content: Text(
-                                                    'Your barcode is not in correct format.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        }
+                                        await _model.funk(context);
                                       },
                               ),
                             ],

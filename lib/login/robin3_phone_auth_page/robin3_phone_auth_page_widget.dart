@@ -11,10 +11,10 @@ import 'robin3_phone_auth_page_model.dart';
 export 'robin3_phone_auth_page_model.dart';
 
 class Robin3PhoneAuthPageWidget extends StatefulWidget {
-  const Robin3PhoneAuthPageWidget({Key? key}) : super(key: key);
+  const Robin3PhoneAuthPageWidget({super.key});
 
   @override
-  _Robin3PhoneAuthPageWidgetState createState() =>
+  State<Robin3PhoneAuthPageWidget> createState() =>
       _Robin3PhoneAuthPageWidgetState();
 }
 

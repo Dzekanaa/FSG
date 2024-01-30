@@ -11,10 +11,10 @@ import 'f_a_qs_model.dart';
 export 'f_a_qs_model.dart';
 
 class FAQsWidget extends StatefulWidget {
-  const FAQsWidget({Key? key}) : super(key: key);
+  const FAQsWidget({super.key});
 
   @override
-  _FAQsWidgetState createState() => _FAQsWidgetState();
+  State<FAQsWidget> createState() => _FAQsWidgetState();
 }
 
 class _FAQsWidgetState extends State<FAQsWidget> {

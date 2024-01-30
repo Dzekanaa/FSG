@@ -142,5 +142,16 @@ class ScannerCompModel extends FlutterFlowModel<ScannerCompWidget> {
     }
   }
 
+  Future scan(BuildContext context) async {
+    var barcode = '';
+
+    barcode = await FlutterBarcodeScanner.scanBarcode(
+      '#C62828', // scanning line color
+      'Cancel', // cancel button text
+      true, // whether to show the flash icon
+      ScanMode.QR,
+    );
+  }
+
   /// Additional helper methods are added here.
 }

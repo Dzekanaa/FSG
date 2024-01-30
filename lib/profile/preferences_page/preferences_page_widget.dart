@@ -15,10 +15,10 @@ import 'preferences_page_model.dart';
 export 'preferences_page_model.dart';
 
 class PreferencesPageWidget extends StatefulWidget {
-  const PreferencesPageWidget({Key? key}) : super(key: key);
+  const PreferencesPageWidget({super.key});
 
   @override
-  _PreferencesPageWidgetState createState() => _PreferencesPageWidgetState();
+  State<PreferencesPageWidget> createState() => _PreferencesPageWidgetState();
 }
 
 class _PreferencesPageWidgetState extends State<PreferencesPageWidget> {

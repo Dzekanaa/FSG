@@ -19,15 +19,14 @@ export 'onboarding1_page_model.dart';
 
 class Onboarding1PageWidget extends StatefulWidget {
   const Onboarding1PageWidget({
-    Key? key,
+    super.key,
     bool? fortext,
-  })  : this.fortext = fortext ?? false,
-        super(key: key);
+  }) : this.fortext = fortext ?? false;
 
   final bool fortext;
 
   @override
-  _Onboarding1PageWidgetState createState() => _Onboarding1PageWidgetState();
+  State<Onboarding1PageWidget> createState() => _Onboarding1PageWidgetState();
 }
 
 class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
@@ -284,7 +283,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                     alignment: AlignmentDirectional(0.0, 1.0),
                     child: Container(
                       width: double.infinity,
-                      height: 400.0,
+                      height: 500.0,
                       constraints: BoxConstraints(
                         maxWidth: 670.0,
                       ),
@@ -323,14 +322,14 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Food Scanner Genius',
+                                              'Food Scan Genius',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .displaySmall
                                                   .override(
                                                     fontFamily: 'Nunito Sans',
-                                                    fontSize: 36.0,
+                                                    fontSize: 34.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ).animateOnPageLoad(animationsMap[
@@ -340,7 +339,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'Empower allergen and diet-sensitive consumers to make informed choices',
+                                                'AI assistant for shoppers with food allergies & dietary preferences',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -360,13 +359,14 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Barcode Scanner',
+                                              'Join the FSG Community',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .displaySmall
                                                   .override(
                                                     fontFamily: 'Nunito Sans',
+                                                    fontSize: 34.0,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ).animateOnPageLoad(animationsMap[
@@ -376,7 +376,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'Instant Allergen and Dietary Compatibility Check',
+                                                'www.scangeni.us\napp.scangeni.us',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -396,7 +396,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Covering All Your Needs',
+                                              'Convenient Features',
                                               textAlign: TextAlign.center,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -412,7 +412,7 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
-                                                'Extensive Allergen Database',
+                                                '5+ million products, 50+ classifications, barcode scanner, responsive apps...',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -666,23 +666,17 @@ class _Onboarding1PageWidgetState extends State<Onboarding1PageWidget>
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
-                    child: Transform.rotate(
-                      angle: 0.8901,
-                      child: Align(
-                        alignment: AlignmentDirectional(-2.2, -0.39),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/casual-life-3d-avocado-and-orange-slices-on-cutting-board.png',
-                            width: 300.0,
-                            height: 400.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['imageOnPageLoadAnimation']!),
+                    alignment: AlignmentDirectional(0.0, -0.98),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/Food_scan_geniusLOGO_NR_-03.png',
+                        width: 400.0,
+                        height: 400.0,
+                        fit: BoxFit.fill,
                       ),
-                    ),
+                    ).animateOnPageLoad(
+                        animationsMap['imageOnPageLoadAnimation']!),
                   ),
                 ],
               ),

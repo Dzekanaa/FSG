@@ -11,10 +11,10 @@ import 'fsghelp_model.dart';
 export 'fsghelp_model.dart';
 
 class FsghelpWidget extends StatefulWidget {
-  const FsghelpWidget({Key? key}) : super(key: key);
+  const FsghelpWidget({super.key});
 
   @override
-  _FsghelpWidgetState createState() => _FsghelpWidgetState();
+  State<FsghelpWidget> createState() => _FsghelpWidgetState();
 }
 
 class _FsghelpWidgetState extends State<FsghelpWidget> {

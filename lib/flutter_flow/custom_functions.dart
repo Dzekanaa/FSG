@@ -29,10 +29,12 @@ List<String>? skini3char(List<String>? inputList) {
     return inputList;
   }
   for (var inputText in inputList) {
-    if (inputText.length >= 3) {
-      outputList.add(inputText.substring(3)); // Remove the first 3 characters
+    if (inputText.length >= 3 && inputText.startsWith("en:")) {
+      outputList.add(inputText.substring(
+          3)); // Remove the first 3 characters if the string is longer and starts with "en"
     } else {
-      outputList.add(inputText); // Return the input as-is if it's too short
+      outputList.add(
+          inputText); // Return the input as-is if it's too short or doesn't start with "en"
     }
   }
 
@@ -43,6 +45,14 @@ String? spoji(List<String>? lista) {
   String? concatenatedString = lista?.join(", ");
 
   return concatenatedString;
+}
+
+List<double> nutrimentsCopy(dynamic data) {
+  Map<String, dynamic> nonNullData = data
+    ..removeWhere((key, value) => value == null || key.contains('_unit'));
+
+  // Return the keys of the non-null values as a list
+  return nonNullData.values.toList().cast<double>();
 }
 
 bool checkBarcode(String barcode) {
@@ -59,4 +69,12 @@ bool checkBarcode(String barcode) {
 
   int checkDigit = (10 - (sum % 10)) % 10;
   return checkDigit == int.parse(barcode[12]);
+}
+
+List<String> nutriments(dynamic data) {
+  Map<String, dynamic> nonNullData = data
+    ..removeWhere((key, value) => value == null || key.contains('_unit'));
+
+  // Return the keys of the non-null values as a list
+  return nonNullData.keys.toList().cast<String>();
 }

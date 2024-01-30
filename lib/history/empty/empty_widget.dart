@@ -10,10 +10,10 @@ import 'empty_model.dart';
 export 'empty_model.dart';
 
 class EmptyWidget extends StatefulWidget {
-  const EmptyWidget({Key? key}) : super(key: key);
+  const EmptyWidget({super.key});
 
   @override
-  _EmptyWidgetState createState() => _EmptyWidgetState();
+  State<EmptyWidget> createState() => _EmptyWidgetState();
 }
 
 class _EmptyWidgetState extends State<EmptyWidget> {

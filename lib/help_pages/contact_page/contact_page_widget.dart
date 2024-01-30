@@ -11,10 +11,10 @@ import 'contact_page_model.dart';
 export 'contact_page_model.dart';
 
 class ContactPageWidget extends StatefulWidget {
-  const ContactPageWidget({Key? key}) : super(key: key);
+  const ContactPageWidget({super.key});
 
   @override
-  _ContactPageWidgetState createState() => _ContactPageWidgetState();
+  State<ContactPageWidget> createState() => _ContactPageWidgetState();
 }
 
 class _ContactPageWidgetState extends State<ContactPageWidget> {

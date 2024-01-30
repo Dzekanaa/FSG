@@ -30,6 +30,7 @@ dependencies:
   cloud_firestore: 4.13.1
   cloud_firestore_platform_interface: 6.0.5
   cloud_firestore_web: 3.8.5
+  collection: 1.17.2
   dropdown_button2: 2.3.9
   easy_debounce: 2.0.1
   equatable: 2.0.5
@@ -49,7 +50,7 @@ dependencies:
     git:
       url: https://github.com/FlutterFlow/flutter_barcode_scanner
   flutter_cache_manager: 3.3.1
-  flutter_facebook_auth: 4.4.1+1
+  flutter_facebook_auth: 4.0.0
   flutter_plugin_android_lifecycle: 2.0.17
   font_awesome_flutter: 10.6.0
   from_css_color: 2.0.0

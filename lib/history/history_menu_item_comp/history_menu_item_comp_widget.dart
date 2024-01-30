@@ -8,10 +8,10 @@ import 'history_menu_item_comp_model.dart';
 export 'history_menu_item_comp_model.dart';
 
 class HistoryMenuItemCompWidget extends StatefulWidget {
-  const HistoryMenuItemCompWidget({Key? key}) : super(key: key);
+  const HistoryMenuItemCompWidget({super.key});
 
   @override
-  _HistoryMenuItemCompWidgetState createState() =>
+  State<HistoryMenuItemCompWidget> createState() =>
       _HistoryMenuItemCompWidgetState();
 }
 

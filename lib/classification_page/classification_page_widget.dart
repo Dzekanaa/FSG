@@ -17,15 +17,14 @@ export 'classification_page_model.dart';
 
 class ClassificationPageWidget extends StatefulWidget {
   const ClassificationPageWidget({
-    Key? key,
+    super.key,
     String? barcode,
-  })  : this.barcode = barcode ?? '/',
-        super(key: key);
+  }) : this.barcode = barcode ?? '/';
 
   final String barcode;
 
   @override
-  _ClassificationPageWidgetState createState() =>
+  State<ClassificationPageWidget> createState() =>
       _ClassificationPageWidgetState();
 }
 
@@ -471,10 +470,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                 children: [
                                                                                   if (valueOrDefault(currentUserDocument?.vegan, '') == 'Critical')
                                                                                     Text(
-                                                                                      GetMenuItemCall.vegan(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!
-                                                                                          .toString(),
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.vegan(
+                                                                                          classificationPageGetMenuItemResponse.jsonBody,
+                                                                                        )!
+                                                                                            ? 'Suitable'
+                                                                                            : 'Unsuitable',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -484,10 +487,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                 children: [
                                                                                   if (valueOrDefault(currentUserDocument?.vegan, '') == 'Preferred')
                                                                                     Text(
-                                                                                      GetMenuItemCall.vegan(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!
-                                                                                          .toString(),
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.vegan(
+                                                                                          classificationPageGetMenuItemResponse.jsonBody,
+                                                                                        )!
+                                                                                            ? 'Suitable'
+                                                                                            : 'Unsuitable',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -497,10 +504,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                 children: [
                                                                                   if (valueOrDefault(currentUserDocument?.vegan, '') == 'Tracked')
                                                                                     Text(
-                                                                                      GetMenuItemCall.vegan(
-                                                                                        classificationPageGetMenuItemResponse.jsonBody,
-                                                                                      )!
-                                                                                          .toString(),
+                                                                                      valueOrDefault<String>(
+                                                                                        GetMenuItemCall.vegan(
+                                                                                          classificationPageGetMenuItemResponse.jsonBody,
+                                                                                        )!
+                                                                                            ? 'Suitable'
+                                                                                            : 'Unsuitable',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                 ],
@@ -598,10 +609,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.ovovege, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.ovovege(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.ovovege(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -611,10 +626,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.ovovege, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.ovovege(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.ovovege(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -624,10 +643,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.ovovege, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.ovovege(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.ovovege(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -723,10 +746,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.pescatarian, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.pesca(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.pesca(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -736,10 +763,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.pescatarian, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.pesca(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.pesca(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -749,10 +780,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.pescatarian, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.pesca(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.pesca(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -848,10 +883,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.whitemeat, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.whitemeat(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.whitemeat(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -861,10 +900,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.whitemeat, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.whitemeat(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.whitemeat(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -874,10 +917,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.whitemeat, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.whitemeat(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.whitemeat(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Suitable'
+                                                                                              : 'Unsuitable',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1019,9 +1066,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.halal, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.halal(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.halal(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1031,9 +1084,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.halal, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.halal(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.halal(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1043,9 +1102,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.halal, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.halal(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.halal(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1143,9 +1208,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.kosher, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.kosher(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.kosher(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1155,9 +1226,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.kosher, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.kosher(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.kosher(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1167,9 +1244,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.kosher, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.kosher(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.kosher(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1267,9 +1350,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.jain, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.jain(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.jain(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1279,9 +1368,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.jain, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.jain(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.jain(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1291,9 +1386,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.jain, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.jain(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.jain(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1435,9 +1536,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.organic, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.organic(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.organic(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1447,9 +1554,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.organic, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.organic(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.organic(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1459,9 +1572,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.organic, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.organic(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.organic(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1559,9 +1678,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.gmo, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.gmo(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.gmo(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1571,9 +1696,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.gmo, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.gmo(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.gmo(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1583,9 +1714,15 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.gmo, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.gmo(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.gmo(
+                                                                                                    classificationPageGetMenuItemResponse.jsonBody,
+                                                                                                  ) ==
+                                                                                                  'Yes'
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1681,10 +1818,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sulphurdioxide, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsulphur(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsulphur(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1694,10 +1835,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sulphurdioxide, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsulphur(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsulphur(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1707,10 +1852,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sulphurdioxide, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsulphur(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsulphur(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Compatible'
+                                                                                              : 'Incompatible',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1870,10 +2019,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.celery, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcelery(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1883,10 +2036,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.celery, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcelery(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1896,10 +2053,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.celery, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcelery(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -1995,10 +2156,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.cereals, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcereals(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcereals(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2008,10 +2173,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.cereals, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcereals(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcereals(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2021,10 +2190,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.cereals, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alcereals(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcereals(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2120,10 +2293,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.eggs, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.aleggs(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.aleggs(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2133,10 +2310,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.eggs, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.aleggs(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.aleggs(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2146,10 +2327,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.eggs, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.aleggs(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.aleggs(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2245,10 +2430,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.fish, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alfish(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alfish(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2258,10 +2447,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.fish, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alfish(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alfish(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2271,10 +2464,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.fish, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alfish(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alfish(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2372,9 +2569,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.milk, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.almilk(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2384,9 +2586,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.milk, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.almilk(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2396,9 +2603,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.milk, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.almilk(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!,
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alcelery(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2494,10 +2706,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.nuts, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alnuts(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alnuts(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2507,10 +2723,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.nuts, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alnuts(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alnuts(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2520,10 +2740,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.nuts, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alnuts(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alnuts(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2619,10 +2843,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sesame, '') == 'Critical')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsesame(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsesame(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2632,10 +2860,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sesame, '') == 'Preferred')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsesame(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsesame(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -2645,10 +2877,14 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                   children: [
                                                                                     if (valueOrDefault(currentUserDocument?.sesame, '') == 'Tracked')
                                                                                       Text(
-                                                                                        GetMenuItemCall.alsesame(
-                                                                                          classificationPageGetMenuItemResponse.jsonBody,
-                                                                                        )!
-                                                                                            .toString(),
+                                                                                        valueOrDefault<String>(
+                                                                                          GetMenuItemCall.alsesame(
+                                                                                            classificationPageGetMenuItemResponse.jsonBody,
+                                                                                          )!
+                                                                                              ? 'Present'
+                                                                                              : 'Absent',
+                                                                                          'N / A',
+                                                                                        ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       ),
                                                                                   ],
@@ -3032,1362 +3268,122 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 40.0,
                                                                 0.0, 0.0),
-                                                    child:
-                                                        SingleChildScrollView(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall.fat(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final nutri = functions
+                                                            .nutriments(
+                                                                GetMenuItemCall
+                                                                    .nutri(
+                                                              classificationPageGetMenuItemResponse
+                                                                  .jsonBody,
+                                                            ))
+                                                            .toList();
+                                                        return SingleChildScrollView(
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children:
+                                                                List.generate(
+                                                                    nutri
+                                                                        .length,
+                                                                    (nutriIndex) {
+                                                              final nutriItem =
+                                                                  nutri[
+                                                                      nutriIndex];
+                                                              return Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            4.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                child: Material(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  elevation:
+                                                                      1.0,
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
                                                                   ),
                                                                   child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
+                                                                      Container(
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              4.0),
+                                                                      border:
+                                                                          Border
+                                                                              .all(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                    ),
                                                                     child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Fat',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.fat(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              4.0),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                4.0,
+                                                                                4.0,
+                                                                                4.0,
+                                                                                8.0),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Text(
+                                                                                  nutriItem,
+                                                                                  style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                        fontFamily: 'Nunito Sans',
+                                                                                        fontSize: 22.0,
+                                                                                      ),
+                                                                                ),
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Text(
                                                                                       valueOrDefault<String>(
-                                                                                        GetMenuItemCall.fatUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.fatUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.fatUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
+                                                                                        functions
+                                                                                            .nutrimentsCopy(GetMenuItemCall.nutri(
+                                                                                              classificationPageGetMenuItemResponse.jsonBody,
+                                                                                            ))[nutriIndex]
+                                                                                            .toString(),
                                                                                         'N / A',
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
+                                                                                  ],
+                                                                                ),
+                                                                              ],
+                                                                            ),
                                                                           ),
-                                                                        ),
-                                                                      ],
+                                                                        ],
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .alcohol(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Alcohol',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.alcohol(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    ).toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.alcoholUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.alcoholUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.alcoholUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .iron(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Iron',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.iron(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.ironUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.ironUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.ironUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .fiber(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Fiber',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.fiber(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.fiberUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.fiberUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.fiberUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .sugar(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Sugar',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.sugar(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.sugarUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.sugarUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.sugarUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall.fat(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Proteins',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.proteins(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.proteinsUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.proteinsUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.proteinsUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .carb(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Carbs',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.carb(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.carbUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.carbUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.carbUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .energy100(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Energy',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.energy100(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.energyUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.energyUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.energyUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .sodium(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Sodium',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: 'Nunito Sans',
-                                                                                      fontSize: 22.0,
-                                                                                    ),
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.sodium(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.soduimUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.soduimUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.soduimUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .salt(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Salt',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall,
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.salt(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.saltUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.saltUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.saltUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          if (valueOrDefault<
-                                                              bool>(
-                                                            GetMenuItemCall
-                                                                    .calcium(
-                                                                  classificationPageGetMenuItemResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null,
-                                                            false,
-                                                          ))
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Material(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                elevation: 1.0,
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              4.0),
-                                                                ),
-                                                                child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            4.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        EdgeInsets.all(
-                                                                            4.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4.0,
-                                                                              4.0,
-                                                                              4.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Calcium',
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall,
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    GetMenuItemCall.calcium(
-                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                    )!
-                                                                                        .toString(),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Nunito Sans',
-                                                                                          fontSize: 16.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
-                                                                                    child: Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        GetMenuItemCall.calciumUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    null &&
-                                                                                                GetMenuItemCall.calciumUnit(
-                                                                                                      classificationPageGetMenuItemResponse.jsonBody,
-                                                                                                    ) !=
-                                                                                                    ''
-                                                                                            ? GetMenuItemCall.calciumUnit(
-                                                                                                classificationPageGetMenuItemResponse.jsonBody,
-                                                                                              )
-                                                                                            : 'N / A',
-                                                                                        'N / A',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                        ].divide(SizedBox(
-                                                            height: 8.0)),
-                                                      ),
+                                                              );
+                                                            }),
+                                                          ),
+                                                        );
+                                                      },
                                                     ),
                                                   ),
                                                 ],

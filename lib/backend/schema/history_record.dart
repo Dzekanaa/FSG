@@ -56,8 +56,8 @@ class HistoryRecord extends FirestoreRecord {
           ? parent.collection('history')
           : FirebaseFirestore.instance.collectionGroup('history');
 
-  static DocumentReference createDoc(DocumentReference parent) =>
-      parent.collection('history').doc();
+  static DocumentReference createDoc(DocumentReference parent, {String? id}) =>
+      parent.collection('history').doc(id);
 
   static Stream<HistoryRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => HistoryRecord.fromSnapshot(s));

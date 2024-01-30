@@ -15,10 +15,10 @@ import 'profile_model.dart';
 export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({Key? key}) : super(key: key);
+  const ProfileWidget({super.key});
 
   @override
-  _ProfileWidgetState createState() => _ProfileWidgetState();
+  State<ProfileWidget> createState() => _ProfileWidgetState();
 }
 
 class _ProfileWidgetState extends State<ProfileWidget> {
@@ -46,10 +46,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             );
           },
         ).then((value) => safeSetState(() {}));
-
-        setState(() {
-          FFAppState().skener = false;
-        });
       }
     });
 

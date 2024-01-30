@@ -11,10 +11,10 @@ import 'food_choises_model.dart';
 export 'food_choises_model.dart';
 
 class FoodChoisesWidget extends StatefulWidget {
-  const FoodChoisesWidget({Key? key}) : super(key: key);
+  const FoodChoisesWidget({super.key});
 
   @override
-  _FoodChoisesWidgetState createState() => _FoodChoisesWidgetState();
+  State<FoodChoisesWidget> createState() => _FoodChoisesWidgetState();
 }
 
 class _FoodChoisesWidgetState extends State<FoodChoisesWidget> {

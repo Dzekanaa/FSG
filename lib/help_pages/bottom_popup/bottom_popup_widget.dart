@@ -9,10 +9,10 @@ import 'bottom_popup_model.dart';
 export 'bottom_popup_model.dart';
 
 class BottomPopupWidget extends StatefulWidget {
-  const BottomPopupWidget({Key? key}) : super(key: key);
+  const BottomPopupWidget({super.key});
 
   @override
-  _BottomPopupWidgetState createState() => _BottomPopupWidgetState();
+  State<BottomPopupWidget> createState() => _BottomPopupWidgetState();
 }
 
 class _BottomPopupWidgetState extends State<BottomPopupWidget> {

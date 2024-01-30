@@ -18,15 +18,14 @@ export 'history_page_model.dart';
 
 class HistoryPageWidget extends StatefulWidget {
   const HistoryPageWidget({
-    Key? key,
+    super.key,
     bool? nema,
-  })  : this.nema = nema ?? true,
-        super(key: key);
+  }) : this.nema = nema ?? true;
 
   final bool nema;
 
   @override
-  _HistoryPageWidgetState createState() => _HistoryPageWidgetState();
+  State<HistoryPageWidget> createState() => _HistoryPageWidgetState();
 }
 
 class _HistoryPageWidgetState extends State<HistoryPageWidget> {

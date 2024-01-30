@@ -8,10 +8,10 @@ import 'missing_food_model.dart';
 export 'missing_food_model.dart';
 
 class MissingFoodWidget extends StatefulWidget {
-  const MissingFoodWidget({Key? key}) : super(key: key);
+  const MissingFoodWidget({super.key});
 
   @override
-  _MissingFoodWidgetState createState() => _MissingFoodWidgetState();
+  State<MissingFoodWidget> createState() => _MissingFoodWidgetState();
 }
 
 class _MissingFoodWidgetState extends State<MissingFoodWidget> {

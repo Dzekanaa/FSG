@@ -15,10 +15,10 @@ import 'edit_page_model.dart';
 export 'edit_page_model.dart';
 
 class EditPageWidget extends StatefulWidget {
-  const EditPageWidget({Key? key}) : super(key: key);
+  const EditPageWidget({super.key});
 
   @override
-  _EditPageWidgetState createState() => _EditPageWidgetState();
+  State<EditPageWidget> createState() => _EditPageWidgetState();
 }
 
 class _EditPageWidgetState extends State<EditPageWidget> {

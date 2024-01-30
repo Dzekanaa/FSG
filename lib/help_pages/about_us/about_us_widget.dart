@@ -11,10 +11,10 @@ import 'about_us_model.dart';
 export 'about_us_model.dart';
 
 class AboutUsWidget extends StatefulWidget {
-  const AboutUsWidget({Key? key}) : super(key: key);
+  const AboutUsWidget({super.key});
 
   @override
-  _AboutUsWidgetState createState() => _AboutUsWidgetState();
+  State<AboutUsWidget> createState() => _AboutUsWidgetState();
 }
 
 class _AboutUsWidgetState extends State<AboutUsWidget> {
