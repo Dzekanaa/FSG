@@ -734,7 +734,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
-                                                                                16.0,
+                                                                                32.0,
                                                                                 0.0),
                                                                             child:
                                                                                 Row(
@@ -871,7 +871,7 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
-                                                                                16.0,
+                                                                                32.0,
                                                                                 0.0),
                                                                             child:
                                                                                 Row(
@@ -3370,7 +3370,10 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                     Text(
-                                                                                      ' g',
+                                                                                      valueOrDefault<String>(
+                                                                                        (nutriItem == 'energy') || (nutriItem == 'calories') || (nutriItem == 'energy_serving') ? ' kcal' : ' mg',
+                                                                                        'N / A',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                   ],

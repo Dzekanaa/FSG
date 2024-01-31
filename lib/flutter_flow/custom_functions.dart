@@ -49,7 +49,11 @@ String? spoji(List<String>? lista) {
 
 List<double> nutrimentsCopy(dynamic data) {
   Map<String, dynamic> nonNullData = data
-    ..removeWhere((key, value) => value == null || key.contains('_unit'));
+    ..removeWhere((key, value) =>
+        value == null ||
+        value == 0 ||
+        key.contains('nova-group') ||
+        key.contains('_unit'));
 
   // Return the keys of the non-null values as a list
   return nonNullData.values.toList().cast<double>();
@@ -73,7 +77,11 @@ bool checkBarcode(String barcode) {
 
 List<String> nutriments(dynamic data) {
   Map<String, dynamic> nonNullData = data
-    ..removeWhere((key, value) => value == null || key.contains('_unit'));
+    ..removeWhere((key, value) =>
+        value == null ||
+        value == 0 ||
+        key.contains('nova-group') ||
+        key.contains('_unit'));
 
   // Return the keys of the non-null values as a list
   return nonNullData.keys.toList().cast<String>();
