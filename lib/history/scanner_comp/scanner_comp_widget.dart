@@ -40,14 +40,16 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
         FFAppState().anonimus = false;
       });
       if (FFAppState().skener) {
-        await _model.scan(context);
-        setState(() {
-          _model.barcodeTextController?.text = _model.barcode!;
-        });
-        await _model.funk(context);
         setState(() {
           FFAppState().skener = false;
         });
+        await _model.scan(context);
+        if (_model.barcode != '-1') {
+          setState(() {
+            _model.barcodeTextController?.text = _model.barcode!;
+          });
+          await _model.funk(context);
+        }
       }
     });
 
@@ -154,11 +156,13 @@ class _ScannerCompWidgetState extends State<ScannerCompWidget> {
                               ScanMode.QR,
                             );
 
-                            setState(() {
-                              _model.barcodeTextController?.text =
-                                  _model.barcode!;
-                            });
-                            await _model.funk(context);
+                            if (_model.barcode != '-1') {
+                              setState(() {
+                                _model.barcodeTextController?.text =
+                                    _model.barcode!;
+                              });
+                              await _model.funk(context);
+                            }
 
                             setState(() {});
                           },
