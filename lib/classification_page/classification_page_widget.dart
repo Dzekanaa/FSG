@@ -3369,6 +3369,10 @@ class _ClassificationPageWidgetState extends State<ClassificationPageWidget>
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
+                                                                                    Text(
+                                                                                      ' g',
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    ),
                                                                                   ],
                                                                                 ),
                                                                               ],
