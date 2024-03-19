@@ -64,10 +64,10 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments.energy_unit''',
       ));
-  static int? energy(dynamic response) => castToType<int>(getJsonField(
+  static dynamic energy(dynamic response) => getJsonField(
         response,
         r'''$.data.nutriments.energy''',
-      ));
+      );
   static List<String>? ingtextList(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients_text''',
@@ -93,7 +93,7 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutrient_levels.sugars''',
       ));
-  static int? fat(dynamic response) => castToType<int>(getJsonField(
+  static double? fat(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.data.nutriments.fat''',
       ));
@@ -148,10 +148,10 @@ class GetMenuItemCall {
         response,
         r'''$.data.nutriments.proteins_unit''',
       ));
-  static int? energy100(dynamic response) => castToType<int>(getJsonField(
+  static dynamic energy100(dynamic response) => getJsonField(
         response,
         r'''$.data.nutriments.energy_serving''',
-      ));
+      );
   static String? carbUnit(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.nutriments.carbohydrates_unit''',
@@ -197,7 +197,7 @@ class GetMenuItemCall {
         response,
         r'''$.analysis.LifestyleChoices.WhiteMeatOnly''',
       ));
-  static String? halal(dynamic response) => castToType<String>(getJsonField(
+  static bool? halal(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.ReligiousRestrictions.Halal''',
       ));
@@ -205,7 +205,7 @@ class GetMenuItemCall {
         response,
         r'''$.analysis.ReligiousRestrictions.Kosher''',
       ));
-  static String? jain(dynamic response) => castToType<String>(getJsonField(
+  static bool? jain(dynamic response) => castToType<bool>(getJsonField(
         response,
         r'''$.analysis.ReligiousRestrictions.Jain''',
       ));
@@ -332,11 +332,15 @@ class GetMenuItemCall {
         r'''$.data.traces_tags''',
         true,
       ) as List?;
-  static List? tralist(dynamic response) => getJsonField(
+  static List<String>? tralist(dynamic response) => (getJsonField(
         response,
         r'''$.data.allergens_tags''',
         true,
-      ) as List?;
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<String>? erText(dynamic response) => (getJsonField(
         response,
         r'''$.data.ingredients[:].text''',
@@ -355,14 +359,16 @@ class GetMenuItemCall {
           .map((x) => castToType<double>(x))
           .withoutNulls
           .toList();
-  static dynamic servingsize(dynamic response) => getJsonField(
+  static String? servingsize(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.serving_size''',
-      );
-  static dynamic servingquantity(dynamic response) => getJsonField(
+      ));
+  static String? servingquantity(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.data.serving_quantity''',
-      );
+      ));
 }
 
 class ApiPagingParams {

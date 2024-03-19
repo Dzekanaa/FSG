@@ -112,6 +112,7 @@ class _MyAppState extends State<MyApp> {
             return Color(4289511088);
           }),
         ),
+        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -129,6 +130,7 @@ class _MyAppState extends State<MyApp> {
             return Color(4289511088);
           }),
         ),
+        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,

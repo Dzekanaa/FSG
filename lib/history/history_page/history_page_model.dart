@@ -10,7 +10,6 @@ import '/history/scanner_comp/scanner_comp_widget.dart';
 import 'history_page_widget.dart' show HistoryPageWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +27,10 @@ class HistoryPageModel extends FlutterFlowModel<HistoryPageWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
   }
